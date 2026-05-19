@@ -1,0 +1,103 @@
+name: Conformance scoreboard
+
+on:
+  workflow_dispatch:
+
+jobs:
+  scoreboard:
+    name: Build, run, score
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Install ponyup, ponyc, corral
+        run: |
+          # ponyup-init exits non-zero after the install completes when it
+          # prints usage on its trailing `ponyup` invocation; we tolerate
+          # that and verify the binary landed.
+          curl --proto '=https' --tlsv1.2 -sSf \
+            https://raw.githubusercontent.com/ponylang/ponyup/latest-release/ponyup-init.sh \
+            | sh ; \
+          test -x "$HOME/.local/share/ponyup/bin/ponyup"
+          echo "$HOME/.local/share/ponyup/bin" >> "$GITHUB_PATH"
+
+      - name: Pin toolchain
+        run: |
+          ponyup default x86_64-linux-ubuntu24.04
+          ponyup update ponyc release
+          ponyup update corral release
+          ponyc --version
+
+      - name: Build http11test
+        run: ponyc --debug
+
+      - name: Bring up comparison targets
+        working-directory: docker
+        run: docker compose up -d --build
+
+      - name: Wait for targets to accept connections
+        run: |
+          set -e
+          for port in 18080 18081 18082 18083 18084 18085 18086 18087 18088; do
+            ready=0
+            for i in $(seq 1 60); do
+              if curl -fs --max-time 1 -o /dev/null "http://localhost:$port/" ; then
+                echo "port $port ready (attempt $i)"
+                ready=1
+                break
+              fi
+              sleep 1
+            done
+            if [ "$ready" -ne 1 ]; then
+              echo "::error::port $port did not come up within 60s"
+              docker ps -a
+              exit 1
+            fi
+          done
+
+      - name: Run the suite against each target
+        run: |
+          mkdir -p results
+          for port in 18080 18081 18082 18083 18084 18085 18086 18087 18088; do
+            case $port in
+              18080) name=nginx ;;
+              18081) name=apache ;;
+              18082) name=caddy ;;
+              18083) name=bandit ;;
+              18084) name=cowboy ;;
+              18085) name=lighttpd ;;
+              18086) name=haproxy ;;
+              18087) name=hyper ;;
+              18088) name=stallion ;;
+            esac
+            ./http11test localhost "$port" > "results/$name.txt" || true
+            echo "--- $name ---"
+            tail -1 "results/$name.txt"
+          done
+
+      - name: Generate scoreboard markdown
+        run: |
+          ts=$(date -u +%Y-%m-%dT%H%M%SZ)
+          scripts/build_scoreboard.sh results > "$ts.md"
+          echo "SCOREBOARD_FILE=$ts.md" >> "$GITHUB_ENV"
+          echo "=== summary ==="
+          head -5 "$ts.md"
+          echo "..."
+          grep -A 12 "^## Scores" "$ts.md"
+
+      - name: Upload scoreboard
+        uses: actions/upload-artifact@v4
+        with:
+          name: conformance-scoreboard
+          path: |
+            *.md
+            results/*.txt
+          retention-days: 90
+
+      - name: Tear down comparison targets
+        if: always()
+        working-directory: docker
+        run: docker compose down -v
