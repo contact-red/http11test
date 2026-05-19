@@ -1,0 +1,12 @@
+# Pony build artifacts
+/http11test
+*.o
+
+# Corral-managed deps
+_corral/
+lock.json
+
+# Editor / OS
+.DS_Store
+*.swp
+*~

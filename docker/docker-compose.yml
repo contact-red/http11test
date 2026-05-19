@@ -1,0 +1,71 @@
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: http11test-nginx
+    ports:
+      - "18080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    restart: unless-stopped
+
+  apache:
+    image: httpd:alpine
+    container_name: http11test-apache
+    ports:
+      - "18081:80"
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:alpine
+    container_name: http11test-caddy
+    ports:
+      - "18082:80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    restart: unless-stopped
+
+  bandit:
+    build: ./bandit
+    container_name: http11test-bandit
+    ports:
+      - "18083:80"
+    restart: unless-stopped
+
+  cowboy:
+    build: ./cowboy
+    container_name: http11test-cowboy
+    ports:
+      - "18084:80"
+    restart: unless-stopped
+
+  lighttpd:
+    build: ./lighttpd
+    container_name: http11test-lighttpd
+    ports:
+      - "18085:80"
+    restart: unless-stopped
+
+  haproxy:
+    image: haproxy:alpine
+    container_name: http11test-haproxy
+    ports:
+      - "18086:80"
+    volumes:
+      - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    depends_on:
+      - nginx
+    restart: unless-stopped
+
+  hyper:
+    build: ./hyper
+    container_name: http11test-hyper
+    ports:
+      - "18087:80"
+    restart: unless-stopped
+
+  stallion:
+    build: ./stallion
+    container_name: http11test-stallion
+    ports:
+      - "18088:80"
+    restart: unless-stopped

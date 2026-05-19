@@ -1,0 +1,8 @@
+{
+	# Quiet the admin endpoint we don't need.
+	admin off
+}
+
+:80 {
+	respond "ok"
+}
