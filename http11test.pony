@@ -33,7 +33,7 @@ actor Main
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 20)
+    let reporter = Reporter(env, cases.size() + 22)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -59,3 +59,5 @@ actor Main
     ContentTypeWellFormed(auth, host, service, reporter)
     ThreePersistentHeads(auth, host, service, reporter)
     GetWithQueryString(auth, host, service, reporter)
+    HeadGetStatusParity(auth, host, service, reporter)
+    ResponseHasFraming(auth, host, service, reporter)
