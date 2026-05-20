@@ -33,7 +33,7 @@ actor Main
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 27)
+    let reporter = Reporter(env, cases.size() + 29)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -66,3 +66,5 @@ actor Main
     HostWithPort(auth, host, service, reporter)
     HeadGetCtParity(auth, host, service, reporter)
     MultipleConnectionLines(auth, host, service, reporter)
+    HeadGetServerParity(auth, host, service, reporter)
+    AcceptWildcard(auth, host, service, reporter)
