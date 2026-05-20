@@ -25,6 +25,12 @@ WORKDIR /app
 COPY corral.json ./
 RUN corral fetch
 
+# Apply a local stallion patch (Connection-header comma-list parsing)
+# until it lands upstream. Drop this override + the COPY below once the
+# fix is in a published stallion release.
+COPY _keep_alive_decision.pony \
+  /app/_corral/github_com_ponylang_stallion/stallion/_keep_alive_decision.pony
+
 COPY main.pony ./
 RUN corral run -- ponyc -D openssl_3.0.x
 
