@@ -166,6 +166,38 @@ primitive ResponseParser
       ParseInvalidContentLength
     end
 
+  fun count_header(bytes: Array[U8] val, name: String): USize =>
+    """
+    Count how many times `name` (expected lowercase) appears as a field-name
+    in the response header section. Case-insensitive on the field name.
+    Returns 0 if the response can't be parsed.
+    """
+    let body_start = match body_offset(bytes)
+    | let n: USize => n
+    | let _: ParseError => return 0
+    end
+    if body_start < 4 then return 0 end
+    let header_end = body_start - 4
+    var count: USize = 0
+    try
+      var i: USize = 0
+      while (i + name.size()) <= header_end do
+        let at_line_start =
+          (i == 0)
+            or ((i >= 2)
+                  and (bytes(i - 2)? == '\r')
+                  and (bytes(i - 1)? == '\n'))
+        if at_line_start and _match_ci(bytes, i, name)? then
+          let j: USize = i + name.size()
+          if (j < bytes.size()) and (bytes(j)? == ':') then
+            count = count + 1
+          end
+        end
+        i = i + 1
+      end
+    end
+    count
+
   fun _match_ci(bytes: Array[U8] val, offset: USize, needle: String): Bool ? =>
     """
     Case-insensitive match of `needle` (which must be lowercase) against
