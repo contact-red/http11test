@@ -3,6 +3,9 @@ name: Conformance scoreboard
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   scoreboard:
     name: Build, run, score
@@ -12,6 +15,11 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v4
+        with:
+          # Check out the branch (not detached HEAD at trigger SHA) so
+          # `git push` knows where to send the README commit.
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
 
       - name: Install ponyup, ponyc, corral
         run: |
@@ -96,6 +104,19 @@ jobs:
             *.md
             results/*.txt
           retention-days: 90
+
+      - name: Write scoreboard to README and commit
+        run: |
+          cp "$SCOREBOARD_FILE" README.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --staged --quiet; then
+            echo "README unchanged — skipping commit"
+          else
+            git commit -m "ci: refresh conformance scoreboard"
+            git push
+          fi
 
       - name: Tear down comparison targets
         if: always()
