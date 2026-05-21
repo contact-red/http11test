@@ -34,7 +34,7 @@ actor Main
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 138)
+    let reporter = Reporter(env, cases.size() + 146)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -178,3 +178,11 @@ actor Main
     OptionsSpecificPath(auth, host, service, reporter)
     EmptyRequestLine(auth, host, service, reporter)
     CorsPreflight(auth, host, service, reporter)
+    BodyLongerThanCl(auth, host, service, reporter)
+    CookieWithQuotedValue(auth, host, service, reporter)
+    AcceptWithQvalues(auth, host, service, reporter)
+    IdnHost(auth, host, service, reporter)
+    HostWithIpv6(auth, host, service, reporter)
+    IfModifiedSinceFuture(auth, host, service, reporter)
+    IfModifiedSinceMalformed(auth, host, service, reporter)
+    MultipleAuthorization(auth, host, service, reporter)
