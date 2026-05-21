@@ -34,7 +34,7 @@ actor Main
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 153)
+    let reporter = Reporter(env, cases.size() + 159)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -193,3 +193,9 @@ actor Main
     TruncatedPercentEncoding(auth, host, service, reporter)
     ThreeMethodPipeline(auth, host, service, reporter)
     ClWithLeadingZeros(auth, host, service, reporter)
+    NulInHeaderValue(auth, host, service, reporter)
+    CharsetInContentType(auth, host, service, reporter)
+    HeaderValueLeadingTab(auth, host, service, reporter)
+    HeaderValueWithColons(auth, host, service, reporter)
+    AcceptZeroQvalue(auth, host, service, reporter)
+    DuplicateHostSameValue(auth, host, service, reporter)
