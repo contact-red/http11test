@@ -33,7 +33,7 @@ actor Main
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 100)
+    let reporter = Reporter(env, cases.size() + 121)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -139,3 +139,24 @@ actor Main
     ResponseHasServerHeader(auth, host, service, reporter)
     GetHasDate(auth, host, service, reporter)
     TeValueSubstringMatch(auth, host, service, reporter)
+    InvalidHeaderNameChar(auth, host, service, reporter)
+    HeaderValueWithQuotes(auth, host, service, reporter)
+    HeaderValueWithSemicolons(auth, host, service, reporter)
+    PercentEncodedSlash(auth, host, service, reporter)
+    PercentEncodedUnicode(auth, host, service, reporter)
+    PersistentHeadThenGet(auth, host, service, reporter)
+    ResponseReasonPhraseAscii(auth, host, service, reporter)
+    PathWithTilde(auth, host, service, reporter)
+    HeaderNameUppercase(auth, host, service, reporter)
+    GetWithFragment(auth, host, service, reporter)
+    PathWithSpecialChars(auth, host, service, reporter)
+    ConnectionUpgradeOnly(auth, host, service, reporter)
+    HeaderWithOnlyOwsValue(auth, host, service, reporter)
+    HeaderValueWithParens(auth, host, service, reporter)
+    HighBitInHeaderName(auth, host, service, reporter)
+    NegativeContentLength(auth, host, service, reporter)
+    ClWithPlusSign(auth, host, service, reporter)
+    ClWithHexValue(auth, host, service, reporter)
+    ConnectMethod(auth, host, service, reporter)
+    DigitOnlyHeaderName(auth, host, service, reporter)
+    AllTcharsHeaderName(auth, host, service, reporter)
