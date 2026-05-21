@@ -29,11 +29,12 @@ actor Main
         OversizeHeader(host)
         InvalidContentLength(host)
         LeadingCrlf(host)
+        NoRequestLineJustCrlf(host)
       ]
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 128)
+    let reporter = Reporter(env, cases.size() + 138)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -167,3 +168,13 @@ actor Main
     ClWithTrailingSpace(auth, host, service, reporter)
     HeaderValueWithBraces(auth, host, service, reporter)
     DoubleTeChunkedHeader(auth, host, service, reporter)
+    PercentNullInPath(auth, host, service, reporter)
+    PercentCrlfInPath(auth, host, service, reporter)
+    InvalidPercentEncoding(auth, host, service, reporter)
+    HostWithBadPort(auth, host, service, reporter)
+    Http12Request(auth, host, service, reporter)
+    HttpLowercaseName(auth, host, service, reporter)
+    DuplicateXCustomHeader(auth, host, service, reporter)
+    OptionsSpecificPath(auth, host, service, reporter)
+    EmptyRequestLine(auth, host, service, reporter)
+    CorsPreflight(auth, host, service, reporter)
