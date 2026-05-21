@@ -34,7 +34,7 @@ actor Main
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 176)
+    let reporter = Reporter(env, cases.size() + 181)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -216,3 +216,8 @@ actor Main
     IfMatchWildcard(auth, host, service, reporter)
     SecWebsocketUpgrade(auth, host, service, reporter)
     ClWithTabOws(auth, host, service, reporter)
+    MultipleAcceptLines(auth, host, service, reporter)
+    RangeOpenEnded(auth, host, service, reporter)
+    RangeSuffix(auth, host, service, reporter)
+    RangeMultipleByteranges(auth, host, service, reporter)
+    ConnectionDuplicateClose(auth, host, service, reporter)
