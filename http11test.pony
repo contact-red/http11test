@@ -30,11 +30,13 @@ actor Main
         InvalidContentLength(host)
         LeadingCrlf(host)
         NoRequestLineJustCrlf(host)
+        TabBeforeColon(host)
+        MethodWithSpace(host)
       ]
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 193)
+    let reporter = Reporter(env, cases.size() + 198)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -233,3 +235,7 @@ actor Main
     MethodWithDigits(auth, host, service, reporter)
     GetWithHugeHeaderCount(auth, host, service, reporter)
     GetWithKbHeaderValue(auth, host, service, reporter)
+    SingleCharFieldName(auth, host, service, reporter)
+    FiveGetPipeline(auth, host, service, reporter)
+    PostClZeroWithBodyBytes(auth, host, service, reporter)
+    HeaderNameOneCharSpecial(auth, host, service, reporter)
