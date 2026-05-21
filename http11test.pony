@@ -33,7 +33,7 @@ actor Main
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 121)
+    let reporter = Reporter(env, cases.size() + 128)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -160,3 +160,10 @@ actor Main
     ConnectMethod(auth, host, service, reporter)
     DigitOnlyHeaderName(auth, host, service, reporter)
     AllTcharsHeaderName(auth, host, service, reporter)
+    TeChunkedNotLast(auth, host, service, reporter)
+    TeIdentityOnly(auth, host, service, reporter)
+    MethodMixedCase(auth, host, service, reporter)
+    ClMultipleSameLine(auth, host, service, reporter)
+    ClWithTrailingSpace(auth, host, service, reporter)
+    HeaderValueWithBraces(auth, host, service, reporter)
+    DoubleTeChunkedHeader(auth, host, service, reporter)
