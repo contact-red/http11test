@@ -34,7 +34,7 @@ actor Main
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 146)
+    let reporter = Reporter(env, cases.size() + 153)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -186,3 +186,10 @@ actor Main
     IfModifiedSinceFuture(auth, host, service, reporter)
     IfModifiedSinceMalformed(auth, host, service, reporter)
     MultipleAuthorization(auth, host, service, reporter)
+    Http10ChunkedRejected(auth, host, service, reporter)
+    PathWithSemicolonParams(auth, host, service, reporter)
+    HostWithUserinfo(auth, host, service, reporter)
+    EncodedDotDotTraversal(auth, host, service, reporter)
+    TruncatedPercentEncoding(auth, host, service, reporter)
+    ThreeMethodPipeline(auth, host, service, reporter)
+    ClWithLeadingZeros(auth, host, service, reporter)
