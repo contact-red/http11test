@@ -34,7 +34,7 @@ actor Main
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 159)
+    let reporter = Reporter(env, cases.size() + 165)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -199,3 +199,9 @@ actor Main
     HeaderValueWithColons(auth, host, service, reporter)
     AcceptZeroQvalue(auth, host, service, reporter)
     DuplicateHostSameValue(auth, host, service, reporter)
+    BareCrInValue(auth, host, service, reporter)
+    DelInValue(auth, host, service, reporter)
+    ObsTextInValue(auth, host, service, reporter)
+    UriWithOnlyQuery(auth, host, service, reporter)
+    ManyCookiesOneHeader(auth, host, service, reporter)
+    PathWithAtSign(auth, host, service, reporter)
