@@ -28,7 +28,7 @@ actor WireClient
     service: String,
     request: ByteSeq,
     callback: WireCallback,
-    timeout_ns: U64 = 5_000_000_000)  // 5 seconds default
+    timeout_ns: U64 = 15_000_000_000)  // 15 seconds default
   =>
     _callback = callback
     let notify: _WireNotify iso = _WireNotify(this, request)
