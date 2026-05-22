@@ -1,6 +1,6 @@
-# http11test scoreboard — 2026-05-22T033718Z
+# http11test scoreboard — 2026-05-22T042232Z
 
-9 servers × 236 tests.
+9 servers × 248 tests.
 
 **Legend:** P = pass · **F** = fail (bold) · **T** = timeout (server did not respond within deadline) · S = skip (test inapplicable)
 
@@ -41,6 +41,7 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `interop-delete-with-body` | P | P | P | P | P | P | P | P | P |
 | `interop-digest-authorization` | P | P | P | P | P | P | P | P | P |
 | `interop-digit-only-header-name` | P | P | P | P | P | P | P | P | P |
+| `interop-double-encoded-traversal` | P | P | P | P | P | P | P | P | P |
 | `interop-double-slash-root` | P | P | P | P | P | P | P | P | P |
 | `interop-double-te-chunked` | P | P | P | P | P | P | P | P | P |
 | `interop-duplicate-cl-same-value` | P | P | P | P | P | P | P | P | P |
@@ -59,6 +60,8 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `interop-forwarded-header` | P | P | P | P | P | P | P | P | P |
 | `interop-get-with-body` | P | P | P | P | P | P | P | P | P |
 | `interop-get-with-fragment` | P | P | P | P | P | P | P | P | P |
+| `interop-head-with-cl` | P | P | P | P | P | P | P | P | P |
+| `interop-head-with-request-body` | P | P | P | P | P | P | P | P | P |
 | `interop-header-all-ows-value` | P | P | P | P | P | P | P | P | P |
 | `interop-header-name-underscore` | P | P | P | P | P | P | P | P | P |
 | `interop-header-name-uppercase` | P | P | P | P | P | P | P | P | P |
@@ -71,12 +74,14 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `interop-header-value-semicolons` | P | P | P | P | P | P | P | P | P |
 | `interop-host-as-ip` | P | P | P | P | P | P | P | P | P |
 | `interop-host-ipv6-literal` | P | P | P | P | P | P | P | P | P |
+| `interop-host-leading-dot` | P | P | P | P | P | P | P | P | P |
 | `interop-host-port-zero` | P | P | P | P | P | P | P | P | P |
 | `interop-host-trailing-dot` | P | P | P | P | P | P | P | P | P |
 | `interop-host-with-port` | P | P | P | P | P | P | P | P | P |
 | `interop-http10-keep-alive` | P | P | P | P | P | P | P | P | P |
 | `interop-http10-request` | P | P | P | P | P | P | P | P | P |
 | `interop-huge-header-count` | P | P | P | P | P | P | P | P | P |
+| `interop-huge-host-name` | P | P | P | P | P | P | P | P | P |
 | `interop-huge-query-string` | P | P | P | P | P | P | P | P | P |
 | `interop-idn-host` | P | P | P | P | P | P | P | P | P |
 | `interop-if-modified-since` | P | P | P | P | P | P | P | P | P |
@@ -93,6 +98,7 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `interop-lowercase-method` | P | P | P | P | P | P | P | P | P |
 | `interop-many-cookies-one-header` | P | P | P | P | P | P | P | P | P |
 | `interop-many-query-params` | P | P | P | P | P | P | P | P | P |
+| `interop-many-tabs-after-colon` | P | P | P | P | P | P | P | P | P |
 | `interop-minimal-request` | P | P | P | P | P | P | P | P | P |
 | `interop-multi-accept-encoding` | P | P | P | P | P | P | P | P | P |
 | `interop-multiple-accept-lines` | P | P | P | P | P | P | P | P | P |
@@ -139,6 +145,7 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `interop-upgrade-insecure-requests` | P | P | P | P | P | P | P | P | P |
 | `interop-url-double-question-mark` | P | P | P | P | P | P | P | P | P |
 | `interop-url-ending-question-mark` | P | P | P | P | P | P | P | P | P |
+| `interop-value-starts-with-colon` | P | P | P | P | P | P | P | P | P |
 | `interop-weak-etag-if-none-match` | P | P | P | P | P | P | P | P | P |
 | `interop-webdav-copy` | P | P | P | P | P | P | P | P | P |
 | `interop-whitespace-in-header-value` | P | P | P | P | P | P | P | P | P |
@@ -161,6 +168,7 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `interop-with-warning-header` | P | P | P | P | P | P | P | P | P |
 | `interop-with-x-custom-header` | P | P | P | P | P | P | P | P | P |
 | `interop-with-x-forwarded-for` | P | P | P | P | P | P | P | P | P |
+| `rfc9110-10.1.1-02-unknown-expectation` | P | P | P | P | P | P | P | P | P |
 | `rfc9110-13.1.1-01-if-match-star` | P | P | P | P | P | P | P | P | P |
 | `rfc9110-13.1.3-01-ims-malformed` | P | P | P | P | P | P | P | P | P |
 | `rfc9110-5.3-01-multi-connection` | P | P | P | P | P | P | P | P | P |
@@ -208,6 +216,7 @@ Already split across the reference 8 — each is its own dialect decision.
 | `interop-connection-duplicate-close` | P | P | P | **T** | P | P | P | P | **T** |
 | `interop-connection-te-token` | P | P | P | **T** | P | P | P | P | **T** |
 | `interop-connection-upgrade-only` | P | P | P | **T** | P | P | P | P | **T** |
+| `interop-host-internal-space` | P | P | P | **F** | P | P | P | **F** | **F** |
 | `interop-host-with-bad-port` | P | P | **F** | P | P | P | P | **F** | **F** |
 | `interop-http2-preface` | P | P | **F** | **T** | **F** | **F** | **T** | **F** | P |
 | `interop-many-headers` | P | P | P | **F** | P | P | P | P | P |
@@ -227,6 +236,7 @@ Already split across the reference 8 — each is its own dialect decision.
 | `rfc9110-5.6.1-01-comma-ows` | P | P | P | **T** | P | P | P | P | **T** |
 | `rfc9110-5.6.2-01-tchar-field-name` | **F** | P | P | P | **F** | P | P | P | **F** |
 | `rfc9110-5.6.2-02-high-bit-field-name` | **F** | P | P | P | **F** | P | P | P | **F** |
+| `rfc9110-7.6.1-01-conflicting-connection` | P | P | P | **T** | P | P | P | P | **T** |
 | `rfc9110-8.3-01` | P | P | P | P | P | P | P | **F** | P |
 | `rfc9110-8.6-05-plus-cl` | P | P | P | P | **F** | P | P | P | P |
 | `rfc9110-9.1-01-method-case-sensitive` | P | P | **F** | **F** | **F** | P | P | **F** | P |
@@ -241,12 +251,14 @@ Already split across the reference 8 — each is its own dialect decision.
 | `rfc9112-3-02` | **F** | P | **F** | **F** | **F** | P | **F** | **F** | **F** |
 | `rfc9112-3-03` | P | P | **F** | P | P | **F** | P | P | **F** |
 | `rfc9112-3-04-method-with-space` | P | P | P | P | P | **F** | P | P | P |
+| `rfc9112-3-05-tab-method-target` | P | P | P | **F** | P | **F** | **F** | P | P |
 | `rfc9112-3.2-06-duplicate` | P | P | P | **F** | P | **F** | **F** | **F** | **F** |
 | `rfc9112-3.2-06-missing` | P | P | P | P | P | P | P | **F** | **F** |
 | `rfc9112-3.2-07-duplicate-host-same` | P | P | P | **F** | P | **F** | **F** | **F** | **F** |
 | `rfc9112-3.2-08-no-host-paired` | P | P | P | P | P | P | P | **F** | **F** |
 | `rfc9112-3.2.2-01-host-userinfo` | P | P | P | P | P | P | P | **F** | **F** |
 | `rfc9112-3.2.3-01-userinfo-in-target` | P | P | **F** | **F** | P | P | P | **F** | **F** |
+| `rfc9112-3.2.4-01-get-star` | P | P | **F** | P | P | P | P | **F** | **F** |
 | `rfc9112-3.2.4-02` | **F** | P | P | P | P | P | **F** | P | P |
 | `rfc9112-5.2-02` | P | **F** | **F** | **F** | P | **F** | **F** | P | P |
 | `rfc9112-6.1-01-chunked-not-last` | P | P | P | **F** | P | P | P | P | **F** |
@@ -258,12 +270,12 @@ Already split across the reference 8 — each is its own dialect decision.
 
 | Server | Pass | Fail | Timeout | Skip |
 |---|---:|---:|---:|---:|
-| nginx | 225 | 10 | 1 | 0 |
-| apache | 231 | 5 | 0 | 0 |
-| caddy | 217 | 18 | 1 | 0 |
-| bandit | 208 | 21 | 7 | 0 |
-| cowboy | 222 | 14 | 0 | 0 |
-| lighttpd | 225 | 11 | 0 | 0 |
-| haproxy | 225 | 10 | 1 | 0 |
-| hyper | 213 | 21 | 1 | 1 |
-| stallion | 188 | 41 | 7 | 0 |
+| nginx | 237 | 10 | 1 | 0 |
+| apache | 243 | 5 | 0 | 0 |
+| caddy | 228 | 19 | 1 | 0 |
+| bandit | 217 | 23 | 8 | 0 |
+| cowboy | 234 | 14 | 0 | 0 |
+| lighttpd | 236 | 12 | 0 | 0 |
+| haproxy | 236 | 11 | 1 | 0 |
+| hyper | 223 | 23 | 1 | 1 |
+| stallion | 197 | 43 | 8 | 0 |
