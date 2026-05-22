@@ -36,7 +36,7 @@ actor Main
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 215)
+    let reporter = Reporter(env, cases.size() + 222)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -257,3 +257,10 @@ actor Main
     KeepAliveHeader(auth, host, service, reporter)
     PostHeadPipeline(auth, host, service, reporter)
     EmptyRequestThenClose(auth, host, service, reporter)
+    AcceptStarAlone(auth, host, service, reporter)
+    WebdavCopyMethod(auth, host, service, reporter)
+    DeleteWithBody(auth, host, service, reporter)
+    QueryStringEdges(auth, host, service, reporter)
+    PathWithEncodedSpace(auth, host, service, reporter)
+    DigestAuthorization(auth, host, service, reporter)
+    EmptyBearerToken(auth, host, service, reporter)
