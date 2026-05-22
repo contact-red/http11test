@@ -36,7 +36,7 @@ actor Main
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 210)
+    let reporter = Reporter(env, cases.size() + 209)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)

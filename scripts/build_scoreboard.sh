@@ -37,19 +37,20 @@ done
 # Collect all observed test IDs.
 all_test_ids=$(
   cat "$results_dir"/*.txt \
-  | grep -E "^(PASS|FAIL|SKIP) " \
+  | grep -E "^(PASS|FAIL|SKIP|TIMEOUT) " \
   | awk '{print $2}' \
   | sed 's/:$//' \
   | sort -u
 )
 
-# Classify each test as CORE (no FAIL across reference 8) or divergent.
+# Classify each test as CORE (no FAIL or TIMEOUT across reference 8)
+# or divergent.
 core_tids=()
 divergent_tids=()
 for tid in $all_test_ids; do
   has_fail=0
   for name in "${ref_servers[@]}"; do
-    if grep -q "^FAIL $tid:" "$results_dir/$name.txt"; then
+    if grep -qE "^(FAIL $tid:|TIMEOUT $tid\$)" "$results_dir/$name.txt"; then
       has_fail=1
       break
     fi
@@ -73,6 +74,8 @@ emit_row() {
       row="$row P |"
     elif grep -q "^SKIP $tid:" "$f"; then
       row="$row S |"
+    elif grep -q "^TIMEOUT $tid\$" "$f"; then
+      row="$row **T** |"
     elif grep -q "^FAIL $tid:" "$f"; then
       row="$row **F** |"
     else
@@ -87,7 +90,7 @@ cat <<EOF
 
 ${#all_servers[@]} servers × ${total_tests} tests.
 
-**Legend:** P = pass · **F** = fail (bold) · S = skip (test inapplicable)
+**Legend:** P = pass · **F** = fail (bold) · **T** = timeout (server did not respond within deadline) · S = skip (test inapplicable)
 
 ## CORE tests
 
@@ -119,14 +122,15 @@ cat <<EOF
 
 ## Scores
 
-| Server | Pass | Fail | Skip |
-|---|---:|---:|---:|
+| Server | Pass | Fail | Timeout | Skip |
+|---|---:|---:|---:|---:|
 EOF
 
 for name in "${all_servers[@]}"; do
   f="$results_dir/$name.txt"
   p=$(grep -c "^PASS " "$f" || true)
   fl=$(grep -c "^FAIL " "$f" || true)
+  t=$(grep -c "^TIMEOUT " "$f" || true)
   s=$(grep -c "^SKIP " "$f" || true)
-  echo "| $name | $p | $fl | $s |"
+  echo "| $name | $p | $fl | $t | $s |"
 done
