@@ -37,7 +37,7 @@ actor Main
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 245)
+    let reporter = Reporter(env, cases.size() + 251)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -288,3 +288,9 @@ actor Main
     PostBinaryBody(auth, host, service, reporter)
     MethodVeryLongName(auth, host, service, reporter)
     ResponseStartsWithHttp11(auth, host, service, reporter)
+    HeaderNameMixedCase(auth, host, service, reporter)
+    CookieHostPrefix(auth, host, service, reporter)
+    SecChUaHeaders(auth, host, service, reporter)
+    PriorityHeader(auth, host, service, reporter)
+    SaveDataHeader(auth, host, service, reporter)
+    HeaderValueTrailingComma(auth, host, service, reporter)
