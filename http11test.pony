@@ -33,11 +33,12 @@ actor Main
         TabBeforeColon(host)
         MethodWithSpace(host)
         TabBetweenMethodAndTarget(host)
+        EmptyMethodLeadingSpace(host)
       ]
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 256)
+    let reporter = Reporter(env, cases.size() + 261)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -299,3 +300,8 @@ actor Main
     HttpVersionLeadingZero(auth, host, service, reporter)
     ManyPipelinedGets(auth, host, service, reporter)
     HostWithQuestionMark(auth, host, service, reporter)
+    TrailerHeaderInRequest(auth, host, service, reporter)
+    JwtBearerToken(auth, host, service, reporter)
+    TwoConnectionCloseLines(auth, host, service, reporter)
+    AwsSigv4Authorization(auth, host, service, reporter)
+    VaryHeaderInRequest(auth, host, service, reporter)
