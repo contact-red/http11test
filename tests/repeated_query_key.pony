@@ -4,6 +4,8 @@ use "../runner"
 
 actor RepeatedQueryKey is WireCallback
   """
+  RFC 3986 §3.4: repeated key
+
   GET /?tag=red&tag=green&tag=blue — repeated query keys are common
   (multi-select forms, array params). Server must accept; parsing is
   the application's concern.

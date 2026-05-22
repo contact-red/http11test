@@ -4,6 +4,8 @@ use "../runner"
 
 actor HeaderValueWithSemicolons is WireCallback
   """
+  RFC 9110 §5.5: value with semicolons
+
   Header values can carry parameters separated by `;` — Cookie,
   Cache-Control, Content-Type are common examples. The server must
   pass through opaque values without splitting on `;`.

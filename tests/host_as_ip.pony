@@ -4,6 +4,8 @@ use "../runner"
 
 actor HostAsIp is WireCallback
   """
+  RFC 3986 §3.2.2: host as ipv4
+
   `Host: 127.0.0.1:<port>` (bare IPv4 + port) is common in tools like
   curl, telnet, and direct-debug clients. Servers must accept IP
   literals in the Host header just like FQDNs.

@@ -4,6 +4,8 @@ use "../runner"
 
 actor ManyQueryParams is WireCallback
   """
+  RFC 3986 §3.4: many params
+
   GET / with 30 distinct query parameters. Common for tracking-pixel,
   analytics, or filter URLs. Server must accept long-tail of `&a=b`
   pairs.

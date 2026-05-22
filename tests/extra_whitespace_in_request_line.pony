@@ -4,6 +4,8 @@ use "../runner"
 
 actor ExtraWhitespaceInRequestLine is WireCallback
   """
+  RFC 9112 §3: extra ws request line
+
   Per rfc9112-3-01 (MAY), recipients MAY treat multiple whitespace
   characters in the request-line as equivalent to single SP separators.
   Some servers reject; others normalize. We send `GET  /  HTTP/1.1`

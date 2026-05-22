@@ -4,6 +4,8 @@ use "../runner"
 
 actor PutWithBody is WireCallback
   """
+  RFC 9110 §9.3.4: put with body
+
   PUT / with a small body. Servers that don't allow PUT on / will return
   405; servers that don't define a PUT handler may return 200/204. We
   accept any non-5xx and rely on the server actually reading the body

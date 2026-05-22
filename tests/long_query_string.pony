@@ -4,6 +4,8 @@ use "../runner"
 
 actor LongQueryString is WireCallback
   """
+  RFC 3986 §3.4: long query
+
   Real-world query strings can run into kilobytes — search forms,
   serialized state, OAuth callback params. We send a ~2 KB query and
   verify the server accepts it (well under any sane request-line

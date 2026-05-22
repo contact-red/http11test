@@ -4,6 +4,8 @@ use "../runner"
 
 actor HeadGetCtParity is WireCallback
   """
+  RFC 9110 §9.3.2: content type
+
   Covers rfc9110-9.3.2-02 (SHOULD) on the Content-Type axis: HEAD must
   send the same Content-Type as the equivalent GET would. Cache layers
   (browsers, proxies, CDNs) inspect HEAD headers when validating cached

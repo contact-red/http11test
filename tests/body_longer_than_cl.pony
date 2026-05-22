@@ -4,6 +4,8 @@ use "../runner"
 
 actor BodyLongerThanCl is WireCallback
   """
+  RFC 9110 §8.6: body longer than cl
+
   Send a POST with Content-Length: 5 but 20 bytes of body. The server
   reads 5 bytes (the declared CL) and treats the remaining 15 as the
   start of a new request. Those bytes form a malformed request-line,

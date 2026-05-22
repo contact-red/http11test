@@ -4,6 +4,8 @@ use "../runner"
 
 actor OriginNull is WireCallback
   """
+  RFC 6454 §7: origin null
+
   `Origin: null` is sent by browsers for sandboxed iframes,
   file:// pages, and certain privacy modes. Server must accept the
   literal string `null` without crashing.

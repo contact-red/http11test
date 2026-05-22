@@ -4,6 +4,8 @@ use "../runner"
 
 actor HeadHasDate is WireCallback
   """
+  RFC 9110 §6.6.1: head
+
   Covers rfc9110-6.6.1-02 (MUST) on the HEAD side: an origin server with
   a clock generates a Date header field in all 2xx/3xx/4xx responses.
   Companion to DateHeaderFormat (which covers GET); browsers cache HEAD

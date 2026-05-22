@@ -4,6 +4,8 @@ use "../runner"
 
 actor Http10Request is WireCallback
   """
+  RFC 9112 §2.5: http10 request
+
   HTTP/1.0 clients still exist (curl --http1.0, embedded devices, some
   command-line tools). Server must accept HTTP/1.0 requests and
   respond. HTTP/1.0 default is no keep-alive, so the connection closes

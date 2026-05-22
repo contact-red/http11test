@@ -4,6 +4,8 @@ use "../runner"
 
 actor PlusInQuery is WireCallback
   """
+  RFC 3986 §3.4: plus in query
+
   `+` is historically used as space encoding in query strings (form-
   urlencoded). Servers must accept `+` in the query component without
   rejecting the request.

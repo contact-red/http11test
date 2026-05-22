@@ -4,6 +4,8 @@ use "../runner"
 
 actor MultipleConnectionLines is WireCallback
   """
+  RFC 9110 §5.3: multi connection
+
   Covers rfc9110-5.3 (multiple field lines with the same name are
   equivalent to a single comma-joined value) intersecting with the
   Connection close semantics. We send TWO `Connection:` header lines —

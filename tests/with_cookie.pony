@@ -4,6 +4,8 @@ use "../runner"
 
 actor WithCookie is WireCallback
   """
+  RFC 6265 §5.4: with cookie
+
   Servers must accept `Cookie:` request headers without crashing,
   whether or not they do anything with the cookies. A bug in cookie
   parsing that returns 4xx for a benign cookie would break every

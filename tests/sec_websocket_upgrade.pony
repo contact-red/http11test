@@ -4,6 +4,8 @@ use "../runner"
 
 actor SecWebsocketUpgrade is WireCallback
   """
+  RFC 6455 §1.3: websocket handshake
+
   WebSocket handshake headers should be accepted (even by servers that
   don't speak WebSocket). The expected outcome is 101 (Switching
   Protocols) for supporting servers, or any non-error status for

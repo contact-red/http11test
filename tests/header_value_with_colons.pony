@@ -4,6 +4,8 @@ use "../runner"
 
 actor HeaderValueWithColons is WireCallback
   """
+  RFC 9110 §5.5: value with colons
+
   Header values may contain colons (Date timestamps, ratios, URIs all
   use them). The parser must split on the FIRST `:` only — everything
   after the first colon is part of the value.

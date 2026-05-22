@@ -4,6 +4,8 @@ use "../runner"
 
 actor HostWithPort is WireCallback
   """
+  RFC 3986 §3.2.2: host with port
+
   Browsers include `:port` in the Host header for any non-default port
   (which is most of dev / Docker / staging). The server must accept and
   match these. Test: send `Host: <host>:<service>` rather than just

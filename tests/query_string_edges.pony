@@ -4,6 +4,8 @@ use "../runner"
 
 actor QueryStringEdges is WireCallback
   """
+  RFC 3986 §3.4: query edges
+
   Edge cases in query string syntax: leading `&`, trailing `&`,
   `?=` (empty key empty value), key with no `=`. All are valid
   application-defined query strings; server must pass through.

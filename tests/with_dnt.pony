@@ -4,6 +4,8 @@ use "../runner"
 
 actor WithDnt is WireCallback
   """
+  RFC 9110 §5.3: dnt header
+
   `DNT: 1` ("Do Not Track") was sent by browsers for years. Now
   largely deprecated, but legacy clients still emit it. Server must
   not break.

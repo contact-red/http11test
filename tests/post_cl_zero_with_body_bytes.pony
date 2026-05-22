@@ -4,6 +4,8 @@ use "../runner"
 
 actor PostClZeroWithBodyBytes is WireCallback
   """
+  RFC 9110 §9.3.3: post cl zero bytes
+
   POST with explicit Content-Length: 0 — server reads zero body bytes.
   Body bytes that follow are reinterpreted as the next request. We
   send `garbage` after the CRLFCRLF; on a Connection: close stream, the

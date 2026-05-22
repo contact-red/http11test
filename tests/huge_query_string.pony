@@ -4,6 +4,8 @@ use "../runner"
 
 actor HugeQueryString is WireCallback
   """
+  RFC 3986 §3.4: huge query
+
   A 4-KB query string. Within typical limits for big-search forms,
   analytics URLs, or token-encoded payloads. Server must accept.
   """

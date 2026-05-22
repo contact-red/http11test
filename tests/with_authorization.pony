@@ -4,6 +4,8 @@ use "../runner"
 
 actor WithAuthorization is WireCallback
   """
+  RFC 9110 §11.6.2: basic auth
+
   An `Authorization:` header on an unprotected resource must not break
   the response. (The server should serve normally — authorization is
   ignored when not required.) A server that returns 4xx for any

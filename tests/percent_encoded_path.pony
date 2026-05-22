@@ -4,6 +4,8 @@ use "../runner"
 
 actor PercentEncodedPath is WireCallback
   """
+  RFC 3986 §2.1: percent encoded path
+
   Browsers percent-encode anything in the URL outside the unreserved
   set. Server must accept `%XX` sequences in the path component. We
   send `/foo%20bar` (space encoded) and expect a sane response (any

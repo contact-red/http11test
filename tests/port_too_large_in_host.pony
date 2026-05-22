@@ -4,6 +4,8 @@ use "../runner"
 
 actor PortTooLargeInHost is WireCallback
   """
+  RFC 3986 §3.2.2: port too large
+
   TCP/UDP ports are unsigned 16-bit (0-65535). A value > 65535 like
   `:99999` is not a valid port. Strict servers respond 400.
   """

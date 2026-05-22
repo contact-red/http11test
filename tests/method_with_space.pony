@@ -2,6 +2,8 @@ use "../runner"
 
 primitive MethodWithSpace
   """
+  RFC 9112 §3: method with space
+
   `GE T / HTTP/1.1` — a space inside the method splits the request-
   line into 4 components instead of 3. Server should reject 400.
   """

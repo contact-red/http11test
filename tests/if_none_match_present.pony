@@ -4,6 +4,8 @@ use "../runner"
 
 actor IfNoneMatchPresent is WireCallback
   """
+  RFC 9110 §13.1.2: if none match
+
   Browsers send `If-None-Match` on cached resources. The server may
   return 304 if the etag matches, 200 otherwise. For resources without
   validators (most of our default endpoints), 200 is expected.

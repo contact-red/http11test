@@ -4,6 +4,8 @@ use "../runner"
 
 actor PercentCrlfInPath is WireCallback
   """
+  RFC 3986 §2.1: percent crlf in path
+
   `%0D%0A` is percent-encoded CRLF. If the server decodes the path
   before logging or further processing, an unguarded log writer could
   end up with injected log lines. The HTTP layer should at minimum

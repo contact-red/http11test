@@ -4,6 +4,8 @@ use "../runner"
 
 actor GetWithHugeHeaderCount is WireCallback
   """
+  RFC 9110 §5.3: many distinct headers
+
   Send 80 distinct X-Header-N lines. Real-world deployments with many
   middlewares and tracing systems can accumulate this many headers.
   Server should accept up to its configured limit. Most servers cap

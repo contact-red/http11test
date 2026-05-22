@@ -4,6 +4,8 @@ use "../runner"
 
 actor PathWithCaret is WireCallback
   """
+  RFC 3986 §3.3: path with caret
+
   `^` is not a valid URI character. Server should reject or accept
   opaquely — but not crash.
   """

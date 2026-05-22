@@ -4,6 +4,8 @@ use "../runner"
 
 actor MultipleAuthorization is WireCallback
   """
+  RFC 9110 §11: multiple auth
+
   Multiple Authorization headers are technically allowed by the
   message grammar but semantically ambiguous. Servers MAY reject or
   MAY use only the first/last. We accept any HTTP response.

@@ -4,6 +4,8 @@ use "../runner"
 
 actor EmptyBearerToken is WireCallback
   """
+  RFC 6750 §2: empty bearer
+
   `Authorization: Bearer ` (or `Authorization: Bearer\\r\\n`) with no
   token value. Server should accept the header — application
   decides whether to honor it.

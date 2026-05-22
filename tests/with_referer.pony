@@ -4,6 +4,8 @@ use "../runner"
 
 actor WithReferer is WireCallback
   """
+  RFC 9110 §10.1.3: referer
+
   Browsers send `Referer:` on most navigations. The header value can
   carry arbitrary URL characters including `?`, `&`, `:`, `/`, `=`,
   `%XX`-encodings, etc. Server must accept without breaking the

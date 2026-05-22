@@ -4,6 +4,8 @@ use "../runner"
 
 actor AcceptMultipleTypes is WireCallback
   """
+  RFC 9110 §12.5.1: multiple types
+
   Browsers send `Accept` with multiple weighted media ranges
   (`text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8`).
   We've already tested the realistic browser variant in browser-style;

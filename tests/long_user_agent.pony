@@ -4,6 +4,8 @@ use "../runner"
 
 actor LongUserAgent is WireCallback
   """
+  RFC 9110 §10.1.5: long user agent
+
   Real-world User-Agent strings can run 200-500 bytes (browser + OS +
   webview + extensions tacked on). We send a ~1 KB User-Agent — well
   below any sane per-header limit but bigger than typical — to verify

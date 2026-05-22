@@ -4,6 +4,8 @@ use "../runner"
 
 actor PipelinePostThenGet is WireCallback
   """
+  RFC 9112 §9.3: post then get
+
   Pipelined POST (with body) followed by GET in the same TCP write.
   Probes the server's ability to advance past a Content-Length-framed
   body before parsing the next request. A naive parser that reads to

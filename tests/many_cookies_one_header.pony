@@ -4,6 +4,8 @@ use "../runner"
 
 actor ManyCookiesOneHeader is WireCallback
   """
+  RFC 6265 §5.4: many cookies
+
   Real-world cookie headers from established sessions can carry many
   cookies on a single line, semicolon-separated. We send 20 cookies in
   one Cookie header to exercise that growth path.

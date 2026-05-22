@@ -4,6 +4,8 @@ use "../runner"
 
 actor AcceptWildcard is WireCallback
   """
+  RFC 9110 §12.5.1: wildcard
+
   Covers basic content negotiation interop: `Accept: */*` MUST be
   honored as "any media type is acceptable". Used by every command-line
   tool, search-engine crawler, and headless browser. A server that

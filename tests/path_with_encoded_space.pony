@@ -4,6 +4,8 @@ use "../runner"
 
 actor PathWithEncodedSpace is WireCallback
   """
+  RFC 3986 §2.1: encoded space
+
   `%20` is percent-encoded space. Filenames with spaces routinely
   appear like this. Server must accept (and may normalize to space).
   """

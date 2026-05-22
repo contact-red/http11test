@@ -4,6 +4,8 @@ use "../runner"
 
 actor Http2Preface is WireCallback
   """
+  RFC 9112 §2.5: http2 preface
+
   An HTTP/2 client that doesn't know prior-knowledge HTTP/1.1 sends
   the HTTP/2 connection preface — `PRI * HTTP/2.0\\r\\n\\r\\nSM\\r\\n\\r\\n`.
   An HTTP/1.1-only server must reject (400 or 505). Crucially, it

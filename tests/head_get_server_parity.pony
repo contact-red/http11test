@@ -4,6 +4,8 @@ use "../runner"
 
 actor HeadGetServerParity is WireCallback
   """
+  RFC 9110 §9.3.2: server
+
   Covers rfc9110-9.3.2-02 (SHOULD) on the Server-header axis: HEAD
   must mirror GET on Server identification. Mismatches in Server
   between HEAD and GET trip identification logic in middleboxes and

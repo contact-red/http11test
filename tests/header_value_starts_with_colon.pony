@@ -4,6 +4,8 @@ use "../runner"
 
 actor HeaderValueStartsWithColon is WireCallback
   """
+  RFC 9110 §5.5: value starts with colon
+
   Field-value may contain `:` (VCHAR). `X-Test: :value` is the first
   colon being the name-value separator, value starting with `:`.
   Server should accept.

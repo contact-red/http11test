@@ -4,6 +4,8 @@ use "../runner"
 
 actor GetWithQueryString is WireCallback
   """
+  RFC 3986 §3.4: get with query
+
   Browsers send query strings on most navigations. We verify that a GET
   with a query component on the request-target returns 2xx and doesn't
   trip over `?`, `=`, or `&` in the request-line.

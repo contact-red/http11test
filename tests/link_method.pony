@@ -4,6 +4,8 @@ use "../runner"
 
 actor LinkMethod is WireCallback
   """
+  RFC 9110 §9.1: link method
+
   `LINK` is a non-standard HTTP method (defined in some WebDAV-ish
   drafts). Server should respond 501 Not Implemented or 405 Method
   Not Allowed — but not crash.

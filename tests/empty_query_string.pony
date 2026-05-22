@@ -4,6 +4,8 @@ use "../runner"
 
 actor EmptyQueryString is WireCallback
   """
+  RFC 3986 §3.4: empty query
+
   Browsers occasionally produce URLs with a `?` and nothing after it
   (forms submitted with no fields, or just lazy URL construction).
   Server must accept the bare `?` without rejecting the request.

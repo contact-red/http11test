@@ -4,6 +4,8 @@ use "../runner"
 
 actor ThreeMethodPipeline is WireCallback
   """
+  RFC 9112 §9.3: three method pipeline
+
   Three pipelined requests with different methods: GET, OPTIONS, GET.
   All on the same TCP connection, written in a single send. Server
   must respond to each in order.

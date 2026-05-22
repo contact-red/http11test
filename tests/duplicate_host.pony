@@ -2,6 +2,8 @@ use "../runner"
 
 primitive DuplicateHost
   """
+  RFC 9112 §3.2: duplicate
+
   Covers rfc9112-3.2-06 (duplicate Host variant): a server MUST respond with
   400 (Bad Request) when more than one Host header field line is present.
   """

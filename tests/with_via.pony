@@ -4,6 +4,8 @@ use "../runner"
 
 actor WithVia is WireCallback
   """
+  RFC 9110 §7.6.3: via
+
   `Via:` is added by HTTP proxies. Any server behind a proxy chain
   sees it. Server must accept (and typically ignore at the origin).
   """

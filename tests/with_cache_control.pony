@@ -4,6 +4,8 @@ use "../runner"
 
 actor WithCacheControl is WireCallback
   """
+  RFC 9111 §5.2: cache control
+
   Clients (and intermediaries) send `Cache-Control: no-cache` to
   bypass cached responses. The server doesn't need to do anything
   special with this on a non-cached endpoint, but must not reject the

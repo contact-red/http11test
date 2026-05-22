@@ -4,6 +4,8 @@ use "../runner"
 
 actor PathWithDotDot is WireCallback
   """
+  RFC 3986 §3.3: dot dot segment
+
   `..` traversal segments in the URL path. The server SHOULD normalize
   them away before resolution. Whether normalization yields 200 (root)
   or 400/404 (rejected/not-found) depends on the server; we accept any

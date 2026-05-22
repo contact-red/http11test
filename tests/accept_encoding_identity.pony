@@ -4,6 +4,8 @@ use "../runner"
 
 actor AcceptEncodingIdentity is WireCallback
   """
+  RFC 9110 §12.5.3: identity
+
   Per rfc9110-12.5.3, `identity` (no transformation) is always
   acceptable. A client signalling `Accept-Encoding: identity` is
   effectively opting out of compression. The server must still return

@@ -4,6 +4,8 @@ use "../runner"
 
 actor MinimalRequest is WireCallback
   """
+  RFC 9112 §2: minimal request
+
   Smallest legal HTTP/1.1 request: GET / HTTP/1.1 + Host + CRLF CRLF.
   We add Connection: close so we can detect end-of-response by EOF.
   This is the bare-minimum probe — if this fails, something fundamental

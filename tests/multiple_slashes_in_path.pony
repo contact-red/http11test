@@ -4,6 +4,8 @@ use "../runner"
 
 actor MultipleSlashesInPath is WireCallback
   """
+  RFC 3986 §3.3: multiple slashes
+
   Real URLs sometimes contain `//` from naive concatenation
   (`https://host/` + `/path`) or proxy rewrites. Servers must accept
   multiple slashes in the path component without rejecting the

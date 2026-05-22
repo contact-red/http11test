@@ -4,6 +4,8 @@ use "../runner"
 
 actor DeepPath is WireCallback
   """
+  RFC 3986 §3.3: deep path
+
   Multi-segment URL paths (`/a/b/c/d/e`) are common in REST APIs and
   static-site layouts. Server must accept arbitrary path depth (within
   size limits). We use 20 segments.

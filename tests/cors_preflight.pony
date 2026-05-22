@@ -4,6 +4,8 @@ use "../runner"
 
 actor CorsPreflight is WireCallback
   """
+  Fetch §3.2.6: cors preflight
+
   A typical CORS preflight: OPTIONS with `Origin`,
   `Access-Control-Request-Method`, and `Access-Control-Request-Headers`.
   The server may choose to handle preflight (with appropriate Access-

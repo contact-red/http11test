@@ -4,6 +4,8 @@ use "../runner"
 
 actor WithXForwardedFor is WireCallback
   """
+  RFC 7239 §1: x forwarded for
+
   `X-Forwarded-For` is the de-facto standard for proxy chains. Any
   server fronted by a load balancer or reverse proxy sees this header.
   Must not break the request even if the server doesn't act on it.

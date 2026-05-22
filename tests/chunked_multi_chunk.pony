@@ -4,6 +4,8 @@ use "../runner"
 
 actor ChunkedMultiChunk is WireCallback
   """
+  RFC 9112 §7: multi chunk
+
   POST with chunked encoding, multiple chunks. Probes the chunked
   decoder's loop transition.
   """

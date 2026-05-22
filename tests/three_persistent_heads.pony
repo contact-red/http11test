@@ -4,6 +4,8 @@ use "../runner"
 
 actor ThreePersistentHeads is WireCallback
   """
+  RFC 9112 §9.3: three
+
   Extends rfc9112-9.3-01: a real browser page load opens one keep-alive
   connection and pumps 3-6 requests through it. We pipeline three HEAD
   requests (last with Connection: close) and count the CRLF CRLF

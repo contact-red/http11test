@@ -4,6 +4,8 @@ use "../runner"
 
 actor WhitespaceInHeaderValue is WireCallback
   """
+  RFC 9110 §5.5: internal whitespace
+
   Header field-values can contain interior spaces (between VCHARs).
   Server must not split or reject on interior whitespace.
   """

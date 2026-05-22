@@ -4,6 +4,8 @@ use "../runner"
 
 actor RangeMultipleByteranges is WireCallback
   """
+  RFC 9110 §14.1.2: multiple ranges
+
   `Range: bytes=0-99, 200-299` (multiple ranges) - the server may
   respond 206 with multipart/byteranges body, 206 with combined range,
   200 (fall back), or 416 (refuse). Any non-5xx is acceptable.

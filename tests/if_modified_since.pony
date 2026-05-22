@@ -4,6 +4,8 @@ use "../runner"
 
 actor IfModifiedSinceOld is WireCallback
   """
+  RFC 9110 §13.1.3: ims
+
   Browsers send `If-Modified-Since` on every cached resource. The
   server must accept and process the header — for resources without
   validators (our default endpoints) returning 200 is correct. For

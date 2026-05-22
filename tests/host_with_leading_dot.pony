@@ -4,6 +4,8 @@ use "../runner"
 
 actor HostWithLeadingDot is WireCallback
   """
+  RFC 3986 §3.2.2: leading dot fqdn
+
   `.example.com` (with leading dot) is a valid root-relative FQDN per
   DNS conventions. Server may treat as a normal host or reject;
   either is acceptable as long as it doesn't crash.

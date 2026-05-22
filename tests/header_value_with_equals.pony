@@ -4,6 +4,8 @@ use "../runner"
 
 actor HeaderValueWithEquals is WireCallback
   """
+  RFC 9110 §5.5: value with equals
+
   `=` is a VCHAR (0x3D) and so legal in field-value. Many headers
   use it (Accept-Language, parameter=value pairs). Server must
   accept multiple `=` signs.

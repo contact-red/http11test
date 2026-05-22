@@ -4,6 +4,8 @@ use "../runner"
 
 actor FiveGetPipeline is WireCallback
   """
+  RFC 9112 §9.3: five get pipeline
+
   Pipelined 5 identical GETs in one write. All 5 responses must come
   back in order. Stresses the parser's ability to re-enter
   _ExpectRequestLine cleanly after each request.

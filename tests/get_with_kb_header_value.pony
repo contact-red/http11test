@@ -4,6 +4,8 @@ use "../runner"
 
 actor GetWithKbHeaderValue is WireCallback
   """
+  RFC 9110 §5.5: kb value
+
   Send a single header with a 4-KB value. Common for big-cookie jars
   and JWT-style tokens. Server should accept up to its configured
   limit; over-the-limit responses with 431.

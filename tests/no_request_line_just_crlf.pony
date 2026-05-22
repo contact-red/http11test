@@ -2,6 +2,8 @@ use "../runner"
 
 primitive NoRequestLineJustCrlf
   """
+  RFC 9112 §2.2: double empty crlf
+
   A connection that sends only `\\r\\n\\r\\n` (no request-line at all)
   is malformed. Server should respond 400 — not loop forever or
   process as a malformed request. Sending one `\\r\\n` is the empty-

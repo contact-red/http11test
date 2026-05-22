@@ -4,6 +4,8 @@ use "../runner"
 
 actor WithOrigin is WireCallback
   """
+  RFC 6454 §7: origin
+
   `Origin:` is sent by browsers on cross-origin requests (and same-
   origin POST/PUT/DELETE). Required for any CORS-aware server to make
   the right preflight decisions. Even non-CORS servers must accept.

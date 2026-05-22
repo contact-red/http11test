@@ -4,6 +4,8 @@ use "../runner"
 
 actor ClBeforeTeSmuggling is WireCallback
   """
+  RFC 9112 §6.1: cl before te
+
   Same TE/CL conflict, opposite order. Some buggy parsers honor
   whichever header came LAST, others honor whichever came FIRST —
   the inconsistency is the actual smuggling vector when two HTTP

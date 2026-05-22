@@ -4,6 +4,8 @@ use "../runner"
 
 actor ManyHeaders is WireCallback
   """
+  RFC 9110 §5.3: many headers
+
   Server must accept requests with many small header lines (50). This
   is well below any reasonable per-request limit but bigger than the
   default test stack uses. Real-world requests through CDNs and

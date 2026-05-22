@@ -4,6 +4,8 @@ use "../runner"
 
 actor ChunkedBodyPost is WireCallback
   """
+  RFC 9112 §7: chunked body
+
   POST / with Transfer-Encoding: chunked and a single 5-byte chunk
   followed by terminator. Probes the server's chunked decoder.
   Acceptable outcomes: 2xx (consumed), 4xx (rejected), 501 (TE not

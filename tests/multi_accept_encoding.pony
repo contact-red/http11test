@@ -4,6 +4,8 @@ use "../runner"
 
 actor MultiAcceptEncoding is WireCallback
   """
+  RFC 9110 §12.5.3: multi ae
+
   Browsers send `Accept-Encoding: gzip, deflate, br` (or similar)
   comma-separated lists every request. Server must parse and respond
   with content acceptable to the list (identity is always acceptable

@@ -4,6 +4,8 @@ use "../runner"
 
 actor WithAcceptLanguage is WireCallback
   """
+  RFC 9110 §12.5.4: accept language
+
   Browsers send `Accept-Language` on every request. q-weighted list
   form with comma separators (e.g., `en-US,en;q=0.5,*;q=0.1`). Server
   must not break.

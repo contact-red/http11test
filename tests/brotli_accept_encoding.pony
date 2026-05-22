@@ -4,6 +4,8 @@ use "../runner"
 
 actor BrotliAcceptEncoding is WireCallback
   """
+  RFC 9110 §12.5.3: brotli
+
   `Accept-Encoding: br` — Brotli is the modern third coding (after
   gzip and deflate) supported by all major browsers since 2017.
   Server must accept the header; whether it actually serves br is

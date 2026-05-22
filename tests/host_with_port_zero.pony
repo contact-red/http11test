@@ -4,6 +4,8 @@ use "../runner"
 
 actor HostWithPortZero is WireCallback
   """
+  RFC 3986 §3.2.2: port zero
+
   TCP port 0 is reserved (cannot be bound by an application). Sending
   `Host: example.com:0` is a malformed authority. Strict servers
   respond 400.

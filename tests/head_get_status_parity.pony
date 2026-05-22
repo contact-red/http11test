@@ -4,6 +4,8 @@ use "../runner"
 
 actor HeadGetStatusParity is WireCallback
   """
+  RFC 9110 §9.3.2: status
+
   Covers rfc9110-9.3.2-02 (SHOULD) on the status-code axis: HEAD must
   return the same status code as GET would for the same resource.
   Browsers use HEAD for cache probes — if HEAD returns 404 but GET
