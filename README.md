@@ -1,8 +1,8 @@
-# http11test scoreboard — 2026-05-22T023706Z
+# http11test scoreboard — 2026-05-22T025308Z
 
 9 servers × 223 tests.
 
-**Legend:** P = pass · **F** = fail (bold) · S = skip (test inapplicable)
+**Legend:** P = pass · **F** = fail (bold) · **T** = timeout (server did not respond within deadline) · S = skip (test inapplicable)
 
 ## CORE tests
 
@@ -193,16 +193,16 @@ Already split across the reference 8 — each is its own dialect decision.
 
 | Test ID | nginx | apache | caddy | bandit | cowboy | lighttpd | haproxy | hyper | **stallion** |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| `interop-connection-duplicate-close` | P | P | P | **F** | P | P | P | P | **F** |
-| `interop-connection-te-token` | P | P | P | **F** | P | P | P | P | **F** |
-| `interop-connection-upgrade-only` | P | P | P | **F** | P | P | P | P | **F** |
+| `interop-connection-duplicate-close` | P | P | P | **T** | P | P | P | P | **T** |
+| `interop-connection-te-token` | P | P | P | **T** | P | P | P | P | **T** |
+| `interop-connection-upgrade-only` | P | P | P | **T** | P | P | P | P | **T** |
 | `interop-host-with-bad-port` | P | P | **F** | P | P | P | P | **F** | **F** |
-| `interop-http2-preface` | P | P | **F** | **F** | **F** | **F** | **F** | **F** | P |
+| `interop-http2-preface` | P | P | **F** | **T** | **F** | **F** | **T** | **F** | P |
 | `interop-many-headers` | P | P | P | **F** | P | P | P | P | P |
 | `interop-method-with-digits` | P | P | **F** | **F** | **F** | P | P | **F** | P |
 | `interop-pipeline-post-then-get` | P | P | P | P | P | **F** | P | P | P |
 | `interop-port-too-large-in-host` | P | P | **F** | P | P | P | P | **F** | **F** |
-| `interop-sec-websocket-upgrade` | **F** | P | **F** | **F** | P | P | P | **F** | **F** |
+| `interop-sec-websocket-upgrade` | **T** | P | **T** | **T** | P | P | P | **T** | **T** |
 | `interop-te-substring-match` | P | P | P | **F** | P | P | P | P | **F** |
 | `interop-uri-only-query` | P | **F** | P | P | P | P | P | P | **F** |
 | `rfc3986-3.2.2-01-ipv6-no-brackets` | P | P | **F** | P | P | P | P | **F** | **F** |
@@ -211,7 +211,7 @@ Already split across the reference 8 — each is its own dialect decision.
 | `rfc9110-5.5-01-nul-in-value` | P | P | P | **F** | **F** | P | P | P | **F** |
 | `rfc9110-5.5-02-bare-cr-in-value` | P | P | P | **F** | **F** | P | P | P | **F** |
 | `rfc9110-5.5-03-del-in-value` | **F** | P | P | **F** | **F** | P | **F** | P | **F** |
-| `rfc9110-5.6.1-01-comma-ows` | P | P | P | **F** | P | P | P | P | **F** |
+| `rfc9110-5.6.1-01-comma-ows` | P | P | P | **T** | P | P | P | P | **T** |
 | `rfc9110-5.6.2-01-tchar-field-name` | **F** | P | P | P | **F** | P | P | P | **F** |
 | `rfc9110-5.6.2-02-high-bit-field-name` | **F** | P | P | P | **F** | P | P | P | **F** |
 | `rfc9110-8.3-01` | P | P | P | P | P | P | P | **F** | P |
@@ -238,19 +238,19 @@ Already split across the reference 8 — each is its own dialect decision.
 | `rfc9112-5.2-02` | P | **F** | **F** | **F** | P | **F** | **F** | P | P |
 | `rfc9112-6.1-01-chunked-not-last` | P | P | P | **F** | P | P | P | P | **F** |
 | `rfc9112-6.1-02-http10-chunked` | P | **F** | **F** | **F** | **F** | P | P | P | **F** |
-| `rfc9112-9.6-03-list` | P | P | P | **F** | P | P | P | P | **F** |
+| `rfc9112-9.6-03-list` | P | P | P | **T** | P | P | P | P | **T** |
 | `rfc9112-9.6-04` | P | P | P | **F** | P | P | P | P | **F** |
 
 ## Scores
 
-| Server | Pass | Fail | Skip |
-|---|---:|---:|---:|
-| nginx | 212 | 11 | 0 |
-| apache | 218 | 5 | 0 |
-| caddy | 204 | 19 | 0 |
-| bandit | 195 | 28 | 0 |
-| cowboy | 209 | 14 | 0 |
-| lighttpd | 213 | 10 | 0 |
-| haproxy | 212 | 11 | 0 |
-| hyper | 200 | 22 | 1 |
-| stallion | 176 | 47 | 0 |
+| Server | Pass | Fail | Timeout | Skip |
+|---|---:|---:|---:|---:|
+| nginx | 212 | 10 | 1 | 0 |
+| apache | 218 | 5 | 0 | 0 |
+| caddy | 204 | 18 | 1 | 0 |
+| bandit | 195 | 21 | 7 | 0 |
+| cowboy | 209 | 14 | 0 | 0 |
+| lighttpd | 213 | 10 | 0 | 0 |
+| haproxy | 212 | 10 | 1 | 0 |
+| hyper | 200 | 21 | 1 | 1 |
+| stallion | 176 | 41 | 6 | 0 |
