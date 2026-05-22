@@ -37,7 +37,7 @@ actor Main
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 239)
+    let reporter = Reporter(env, cases.size() + 245)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -282,3 +282,9 @@ actor Main
     PathWithCaret(auth, host, service, reporter)
     AcceptWithSubparams(auth, host, service, reporter)
     DateInRequest(auth, host, service, reporter)
+    PathWithReservedDelims(auth, host, service, reporter)
+    CacheControlMultipleDirectives(auth, host, service, reporter)
+    NegotiateAuthorization(auth, host, service, reporter)
+    PostBinaryBody(auth, host, service, reporter)
+    MethodVeryLongName(auth, host, service, reporter)
+    ResponseStartsWithHttp11(auth, host, service, reporter)
