@@ -8,7 +8,7 @@ actor ChunkedUppercaseHex is WireCallback
   lower-case hex. Send a 0xA-byte chunk using uppercase 'A'.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-chunked-uppercase-hex"
+  let _test_id: String = "rfc9112-7.1.1-03-chunk-uppercase-hex"
 
   new create(
     auth: TCPConnectAuth,

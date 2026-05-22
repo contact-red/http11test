@@ -9,7 +9,7 @@ actor AcceptWithSubparams is WireCallback
   accept the parameter list.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-accept-subparams"
+  let _test_id: String = "rfc9110-12.5.1-03-subparams"
 
   new create(
     auth: TCPConnectAuth,

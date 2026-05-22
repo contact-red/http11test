@@ -10,7 +10,7 @@ actor HeaderValueWithParens is WireCallback
   through.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-header-value-parens"
+  let _test_id: String = "rfc9110-5.5-11-value-with-parens"
 
   new create(
     auth: TCPConnectAuth,

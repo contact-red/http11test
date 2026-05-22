@@ -9,7 +9,7 @@ actor DigitOnlyHeaderName is WireCallback
   but the server must accept it without error.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-digit-only-header-name"
+  let _test_id: String = "rfc9110-5.6.2-05-digit-only-field-name"
 
   new create(
     auth: TCPConnectAuth,

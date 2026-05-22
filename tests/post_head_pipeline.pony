@@ -9,7 +9,7 @@ actor PostHeadPipeline is WireCallback
   correctly suppress the HEAD response body (per RFC 9110 §9.3.2).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-post-head-pipeline"
+  let _test_id: String = "rfc9112-9.3-05-post-head"
 
   new create(
     auth: TCPConnectAuth,

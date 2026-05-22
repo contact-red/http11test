@@ -9,7 +9,7 @@ actor HeaderValueWithEquals is WireCallback
   accept multiple `=` signs.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-header-value-equals"
+  let _test_id: String = "rfc9110-5.5-09-value-with-equals"
 
   new create(
     auth: TCPConnectAuth,

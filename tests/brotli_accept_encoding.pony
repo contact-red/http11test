@@ -10,7 +10,7 @@ actor BrotliAcceptEncoding is WireCallback
   optional (identity fallback is fine).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-brotli-accept-encoding"
+  let _test_id: String = "rfc9110-12.5.3-02-brotli"
 
   new create(
     auth: TCPConnectAuth,

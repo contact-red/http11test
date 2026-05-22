@@ -9,7 +9,7 @@ actor RepeatedQueryKey is WireCallback
   the application's concern.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-repeated-query-key"
+  let _test_id: String = "rfc3986-3.4-06-repeated-key"
 
   new create(
     auth: TCPConnectAuth,

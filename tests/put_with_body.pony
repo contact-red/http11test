@@ -10,7 +10,7 @@ actor PutWithBody is WireCallback
   before responding — a hang indicates broken framing.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-put-with-body"
+  let _test_id: String = "rfc9110-9.3.4-01-put-with-body"
 
   new create(
     auth: TCPConnectAuth,

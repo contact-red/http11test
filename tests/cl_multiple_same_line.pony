@@ -11,7 +11,7 @@ actor ClMultipleSameLine is WireCallback
   lenient one accepts and treats as 5.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-cl-list-same-value"
+  let _test_id: String = "rfc9110-8.6-09-cl-comma-list"
 
   new create(
     auth: TCPConnectAuth,

@@ -9,7 +9,7 @@ actor ThreeMethodPipeline is WireCallback
   must respond to each in order.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-three-method-pipeline"
+  let _test_id: String = "rfc9112-9.3-06-three-method-pipeline"
 
   new create(
     auth: TCPConnectAuth,

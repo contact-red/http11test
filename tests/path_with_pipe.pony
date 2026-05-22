@@ -9,7 +9,7 @@ actor PathWithPipe is WireCallback
   ones accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-path-with-pipe"
+  let _test_id: String = "rfc3986-3.3-09-path-with-pipe"
 
   new create(
     auth: TCPConnectAuth,

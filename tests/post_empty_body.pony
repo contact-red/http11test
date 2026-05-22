@@ -9,7 +9,7 @@ actor PostEmptyBody is WireCallback
   RFC-compliant; we accept any non-5xx response without parse error.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-post-empty-body"
+  let _test_id: String = "rfc9110-9.3.3-01-post-empty-body"
 
   new create(
     auth: TCPConnectAuth,

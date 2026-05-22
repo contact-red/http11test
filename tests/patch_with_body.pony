@@ -8,7 +8,7 @@ actor PatchWithBody is WireCallback
   but not all servers implement it. Acceptable: 2xx, 4xx, or 501.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-patch-with-body"
+  let _test_id: String = "rfc5789-2-01-patch-method"
 
   new create(
     auth: TCPConnectAuth,

@@ -9,7 +9,7 @@ actor ProxyAuthorization is WireCallback
   normally.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-proxy-authorization"
+  let _test_id: String = "rfc9110-11.7.1-01-proxy-auth"
 
   new create(
     auth: TCPConnectAuth,

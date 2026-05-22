@@ -11,7 +11,7 @@ actor PipelinePostThenGet is WireCallback
   with 400 to the GET.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-pipeline-post-then-get"
+  let _test_id: String = "rfc9112-9.3-04-post-then-get"
 
   new create(
     auth: TCPConnectAuth,

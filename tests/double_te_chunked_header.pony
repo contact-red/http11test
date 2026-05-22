@@ -14,7 +14,7 @@ actor DoubleTeChunkedHeader is WireCallback
   correctly).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-double-te-chunked"
+  let _test_id: String = "rfc9112-6.1-05-double-te-chunked"
 
   new create(
     auth: TCPConnectAuth,

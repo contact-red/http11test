@@ -9,7 +9,7 @@ actor OriginNull is WireCallback
   literal string `null` without crashing.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-origin-null"
+  let _test_id: String = "rfc6454-7-02-origin-null"
 
   new create(
     auth: TCPConnectAuth,

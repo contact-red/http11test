@@ -11,7 +11,7 @@ actor PathWithCurlyBraces is WireCallback
   accept opaquely.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-path-curly-braces"
+  let _test_id: String = "rfc3986-3.3-12-curly-braces"
 
   new create(
     auth: TCPConnectAuth,

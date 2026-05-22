@@ -13,7 +13,7 @@ actor Expect100WithBody is WireCallback
   divergence.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-expect-100-with-body"
+  let _test_id: String = "rfc9110-10.1.1-03-100-continue"
 
   new create(
     auth: TCPConnectAuth,

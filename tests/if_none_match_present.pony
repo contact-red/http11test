@@ -9,7 +9,7 @@ actor IfNoneMatchPresent is WireCallback
   validators (most of our default endpoints), 200 is expected.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-if-none-match"
+  let _test_id: String = "rfc9110-13.1.2-01-if-none-match"
 
   new create(
     auth: TCPConnectAuth,

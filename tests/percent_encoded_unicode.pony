@@ -9,7 +9,7 @@ actor PercentEncodedUnicode is WireCallback
   opaque path bytes.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-percent-encoded-unicode"
+  let _test_id: String = "rfc3986-2.1-04-encoded-unicode"
 
   new create(
     auth: TCPConnectAuth,

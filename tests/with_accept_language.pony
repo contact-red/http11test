@@ -9,7 +9,7 @@ actor WithAcceptLanguage is WireCallback
   must not break.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-accept-language"
+  let _test_id: String = "rfc9110-12.5.4-01-accept-language"
 
   new create(
     auth: TCPConnectAuth,

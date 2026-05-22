@@ -11,7 +11,7 @@ actor Http10KeepAlive is WireCallback
   keep-alive and verify two responses.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-http10-keep-alive"
+  let _test_id: String = "rfc9112-9.1-01-http10-keep-alive"
 
   new create(
     auth: TCPConnectAuth,

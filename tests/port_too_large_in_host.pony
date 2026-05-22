@@ -8,7 +8,7 @@ actor PortTooLargeInHost is WireCallback
   `:99999` is not a valid port. Strict servers respond 400.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-port-too-large-in-host"
+  let _test_id: String = "rfc3986-3.2.2-16-port-too-large"
 
   new create(
     auth: TCPConnectAuth,

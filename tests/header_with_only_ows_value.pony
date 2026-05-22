@@ -11,7 +11,7 @@ actor HeaderWithOnlyOwsValue is WireCallback
   and accept either.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-header-all-ows-value"
+  let _test_id: String = "rfc9110-5.5-06-all-ows-value"
 
   new create(
     auth: TCPConnectAuth,

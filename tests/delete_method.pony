@@ -8,7 +8,7 @@ actor DeleteMethod is WireCallback
   process (200/204) or reject (405/501).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-delete-method"
+  let _test_id: String = "rfc9110-9.3.5-01-delete-method"
 
   new create(
     auth: TCPConnectAuth,

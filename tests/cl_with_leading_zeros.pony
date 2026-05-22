@@ -8,7 +8,7 @@ actor ClWithLeadingZeros is WireCallback
   technically valid (`007` parses as 7). Server should accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-cl-leading-zeros"
+  let _test_id: String = "rfc9110-8.6-08-cl-leading-zeros"
 
   new create(
     auth: TCPConnectAuth,

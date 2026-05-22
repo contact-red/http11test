@@ -9,7 +9,7 @@ actor PathWithDotSegment is WireCallback
   place. We accept any non-5xx.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-path-with-dot-segment"
+  let _test_id: String = "rfc3986-3.3-08-dot-segment"
 
   new create(
     auth: TCPConnectAuth,

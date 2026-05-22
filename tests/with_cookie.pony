@@ -10,7 +10,7 @@ actor WithCookie is WireCallback
   authenticated browser session.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-cookie"
+  let _test_id: String = "rfc6265-5.4-03-with-cookie"
 
   new create(
     auth: TCPConnectAuth,

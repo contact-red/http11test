@@ -10,7 +10,7 @@ actor EmptyHeaderValue is WireCallback
   referrer source, `X-Custom:` placeholders). Server must accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-empty-header-value"
+  let _test_id: String = "rfc9110-5.5-05-empty-field-value"
 
   new create(
     auth: TCPConnectAuth,

@@ -9,7 +9,7 @@ actor MethodWithDigits is WireCallback
   server implements it. Server should respond 501 (Not Implemented).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-method-with-digits"
+  let _test_id: String = "rfc9110-9.1-04-method-with-digits"
 
   new create(
     auth: TCPConnectAuth,

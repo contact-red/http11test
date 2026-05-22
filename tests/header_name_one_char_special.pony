@@ -8,7 +8,7 @@ actor HeaderNameOneCharSpecial is WireCallback
   §5.6.2 tchar permits `!`. Server must accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-1-char-special-tchar-name"
+  let _test_id: String = "rfc9110-5.6.2-03-1-char-special-tchar"
 
   new create(
     auth: TCPConnectAuth,

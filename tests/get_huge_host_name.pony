@@ -9,7 +9,7 @@ actor GetHugeHostName is WireCallback
   reject as too-long.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-huge-host-name"
+  let _test_id: String = "rfc3986-3.2.2-21-huge-host-name"
 
   new create(
     auth: TCPConnectAuth,

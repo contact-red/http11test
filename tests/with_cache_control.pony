@@ -10,7 +10,7 @@ actor WithCacheControl is WireCallback
   request.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-cache-control"
+  let _test_id: String = "rfc9111-5.2-01-cache-control"
 
   new create(
     auth: TCPConnectAuth,

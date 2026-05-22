@@ -8,7 +8,7 @@ actor CookieWithQuotedValue is WireCallback
   for opaque-pass-through. Server must accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-cookie-quoted-value"
+  let _test_id: String = "rfc6265-5.2-01-quoted-cookie-value"
 
   new create(
     auth: TCPConnectAuth,

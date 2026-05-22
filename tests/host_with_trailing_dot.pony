@@ -8,7 +8,7 @@ actor HostWithTrailingDot is WireCallback
   valid FQDN form. Server should accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-host-trailing-dot"
+  let _test_id: String = "rfc3986-3.2.2-18-trailing-dot-fqdn"
 
   new create(
     auth: TCPConnectAuth,

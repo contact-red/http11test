@@ -10,7 +10,7 @@ actor MultipleSlashesInPath is WireCallback
   request.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-multiple-slashes-in-path"
+  let _test_id: String = "rfc3986-3.3-03-multiple-slashes"
 
   new create(
     auth: TCPConnectAuth,

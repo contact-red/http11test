@@ -11,7 +11,7 @@ actor IfModifiedSinceFuture is WireCallback
   acceptable.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-if-modified-since-future"
+  let _test_id: String = "rfc9110-13.1.3-04-ims-future"
 
   new create(
     auth: TCPConnectAuth,

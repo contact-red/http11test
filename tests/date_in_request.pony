@@ -8,7 +8,7 @@ actor DateInRequest is WireCallback
   accept and ignore or use as a clock-skew check.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-date-in-request"
+  let _test_id: String = "rfc9110-6.6.1-05-client-date-in-request"
 
   new create(
     auth: TCPConnectAuth,

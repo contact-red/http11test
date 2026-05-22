@@ -9,7 +9,7 @@ actor HostWithLeadingDot is WireCallback
   either is acceptable as long as it doesn't crash.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-host-leading-dot"
+  let _test_id: String = "rfc3986-3.2.2-17-leading-dot-fqdn"
 
   new create(
     auth: TCPConnectAuth,

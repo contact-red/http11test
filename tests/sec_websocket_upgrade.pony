@@ -10,7 +10,7 @@ actor SecWebsocketUpgrade is WireCallback
   servers that don't.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-sec-websocket-upgrade"
+  let _test_id: String = "rfc6455-1.3-01-websocket-handshake"
 
   new create(
     auth: TCPConnectAuth,

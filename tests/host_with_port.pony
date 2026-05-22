@@ -10,7 +10,7 @@ actor HostWithPort is WireCallback
   `<host>` and verify 2xx.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-host-with-port"
+  let _test_id: String = "rfc3986-3.2.2-13-host-with-port"
 
   new create(
     auth: TCPConnectAuth,

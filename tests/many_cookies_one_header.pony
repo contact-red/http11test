@@ -9,7 +9,7 @@ actor ManyCookiesOneHeader is WireCallback
   one Cookie header to exercise that growth path.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-many-cookies-one-header"
+  let _test_id: String = "rfc6265-5.4-01-many-cookies"
 
   new create(
     auth: TCPConnectAuth,

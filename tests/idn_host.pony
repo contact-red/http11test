@@ -9,7 +9,7 @@ actor IdnHost is WireCallback
   must accept the ASCII representation in Host.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-idn-host"
+  let _test_id: String = "rfc5891-4-01-idn-a-label"
 
   new create(
     auth: TCPConnectAuth,

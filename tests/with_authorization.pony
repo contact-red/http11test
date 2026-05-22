@@ -10,7 +10,7 @@ actor WithAuthorization is WireCallback
   Authorization header would break clients with stale stored creds.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-authorization"
+  let _test_id: String = "rfc9110-11.6.2-01-basic-auth"
 
   new create(
     auth: TCPConnectAuth,

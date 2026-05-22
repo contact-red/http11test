@@ -10,7 +10,7 @@ actor HeaderValueLeadingOws is WireCallback
   probes the zero-OWS case; this one probes the extra-OWS case.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-leading-ows-in-header"
+  let _test_id: String = "rfc9110-5.5-14-extra-leading-ows"
 
   new create(
     auth: TCPConnectAuth,

@@ -9,7 +9,7 @@ actor PathWithTilde is WireCallback
   accepted unchanged.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-path-with-tilde"
+  let _test_id: String = "rfc3986-3.3-11-path-with-tilde"
 
   new create(
     auth: TCPConnectAuth,

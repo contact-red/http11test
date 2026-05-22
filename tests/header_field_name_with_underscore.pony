@@ -8,7 +8,7 @@ actor HeaderFieldNameWithUnderscore is WireCallback
   show up from PHP/CGI environments. Server must accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-header-name-underscore"
+  let _test_id: String = "rfc9110-5.6.2-06-underscore-field-name"
 
   new create(
     auth: TCPConnectAuth,

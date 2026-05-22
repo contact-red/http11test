@@ -8,7 +8,7 @@ actor WithAcceptCharset is WireCallback
   legacy clients still send it. Servers must not break.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-accept-charset"
+  let _test_id: String = "rfc9110-12.5.2-01-accept-charset"
 
   new create(
     auth: TCPConnectAuth,

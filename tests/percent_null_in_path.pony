@@ -12,7 +12,7 @@ actor PercentNullInPath is WireCallback
   finding worth investigating).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-percent-null-in-path"
+  let _test_id: String = "rfc3986-2.1-05-percent-null"
 
   new create(
     auth: TCPConnectAuth,

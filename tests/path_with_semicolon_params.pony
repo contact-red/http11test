@@ -10,7 +10,7 @@ actor PathWithSemicolonParams is WireCallback
   without splitting on semicolons.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-path-with-semicolon"
+  let _test_id: String = "rfc3986-3.3-10-path-with-semicolon"
 
   new create(
     auth: TCPConnectAuth,

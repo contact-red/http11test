@@ -9,7 +9,7 @@ actor RangeMultipleByteranges is WireCallback
   200 (fall back), or 416 (refuse). Any non-5xx is acceptable.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-range-multiple-byteranges"
+  let _test_id: String = "rfc9110-14.1.2-02-multiple-ranges"
 
   new create(
     auth: TCPConnectAuth,

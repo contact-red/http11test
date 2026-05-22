@@ -9,7 +9,7 @@ actor PathWithBackslash is WireCallback
   paths. Strict servers reject 400; lenient ones accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-path-with-backslash"
+  let _test_id: String = "rfc3986-3.3-05-path-with-backslash"
 
   new create(
     auth: TCPConnectAuth,

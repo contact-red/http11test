@@ -9,7 +9,7 @@ actor UpgradeInsecureRequests is WireCallback
   upgrade path just ignore it.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-upgrade-insecure-requests"
+  let _test_id: String = "upgrade-insecure-requests-3-01"
 
   new create(
     auth: TCPConnectAuth,

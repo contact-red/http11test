@@ -9,7 +9,7 @@ actor EmptyUserAgent is WireCallback
   Agent:` with no value. Server must accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-empty-user-agent"
+  let _test_id: String = "rfc9110-10.1.5-01-empty-user-agent"
 
   new create(
     auth: TCPConnectAuth,

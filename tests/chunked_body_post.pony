@@ -10,7 +10,7 @@ actor ChunkedBodyPost is WireCallback
   supported). A hang or 5xx indicates a chunked-parser bug.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-chunked-body-post"
+  let _test_id: String = "rfc9112-7-01-chunked-body"
 
   new create(
     auth: TCPConnectAuth,

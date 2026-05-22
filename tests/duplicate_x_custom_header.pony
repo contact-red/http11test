@@ -9,7 +9,7 @@ actor DuplicateXCustomHeader is WireCallback
   yield a 2xx — the server need not error.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-duplicate-x-custom-header"
+  let _test_id: String = "rfc9110-5.3-03-duplicate-extension"
 
   new create(
     auth: TCPConnectAuth,

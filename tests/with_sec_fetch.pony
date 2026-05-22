@@ -8,7 +8,7 @@ actor WithSecFetch is WireCallback
   request (Fetch Metadata spec). Servers must accept them silently.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-sec-fetch"
+  let _test_id: String = "fetch-3.4.6-01-sec-fetch"
 
   new create(
     auth: TCPConnectAuth,

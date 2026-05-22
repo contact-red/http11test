@@ -9,7 +9,7 @@ actor ConnectionDuplicateClose is WireCallback
   reject. Either way, the connection must close.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-connection-duplicate-close"
+  let _test_id: String = "rfc9110-7.6.1-04-duplicate-close-token"
 
   new create(
     auth: TCPConnectAuth,

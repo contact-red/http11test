@@ -10,7 +10,7 @@ actor WithReferer is WireCallback
   request.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-referer"
+  let _test_id: String = "rfc9110-10.1.3-01-referer"
 
   new create(
     auth: TCPConnectAuth,

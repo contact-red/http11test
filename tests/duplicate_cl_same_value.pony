@@ -10,7 +10,7 @@ actor DuplicateClSameValue is WireCallback
   reject (400). Both are RFC-compliant.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-duplicate-cl-same-value"
+  let _test_id: String = "rfc9110-8.6-12-duplicate-cl-same"
 
   new create(
     auth: TCPConnectAuth,

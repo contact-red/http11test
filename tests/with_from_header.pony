@@ -8,7 +8,7 @@ actor WithFromHeader is WireCallback
   sent. Server must tolerate.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-from-header"
+  let _test_id: String = "rfc9110-10.1.2-01-from-header"
 
   new create(
     auth: TCPConnectAuth,

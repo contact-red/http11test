@@ -12,7 +12,7 @@ actor BareLfRequest is WireCallback
   is in an unrecoverable state waiting for an `\\r` byte.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-bare-lf-request"
+  let _test_id: String = "rfc9112-2.2-11-bare-lf-request"
 
   new create(
     auth: TCPConnectAuth,

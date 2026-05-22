@@ -10,7 +10,7 @@ actor DigestAuthorization is WireCallback
   to do with it).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-digest-authorization"
+  let _test_id: String = "rfc7616-3-01-digest-auth"
 
   new create(
     auth: TCPConnectAuth,

@@ -10,7 +10,7 @@ actor TeIdentityOnly is WireCallback
   (200, 400, 501) — important property is that the server does not hang.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-te-identity-only"
+  let _test_id: String = "rfc9112-6.1-06-te-identity"
 
   new create(
     auth: TCPConnectAuth,

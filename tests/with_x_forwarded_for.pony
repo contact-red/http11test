@@ -9,7 +9,7 @@ actor WithXForwardedFor is WireCallback
   Must not break the request even if the server doesn't act on it.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-x-forwarded-for"
+  let _test_id: String = "rfc7239-1-01-x-forwarded-for"
 
   new create(
     auth: TCPConnectAuth,

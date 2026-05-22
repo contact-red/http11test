@@ -9,7 +9,7 @@ actor HostWithPortZero is WireCallback
   respond 400.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-host-port-zero"
+  let _test_id: String = "rfc3986-3.2.2-15-port-zero"
 
   new create(
     auth: TCPConnectAuth,

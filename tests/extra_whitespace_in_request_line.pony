@@ -11,7 +11,7 @@ actor ExtraWhitespaceInRequestLine is WireCallback
   rejection).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-extra-ws-request-line"
+  let _test_id: String = "rfc9112-3-06-extra-ws-request-line"
 
   new create(
     auth: TCPConnectAuth,

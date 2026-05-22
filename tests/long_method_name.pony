@@ -10,7 +10,7 @@ actor LongMethodName is WireCallback
   Implemented) — not 400 — per §15.6.2.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-long-method-name"
+  let _test_id: String = "rfc9110-9.1-03-multi-char-method"
 
   new create(
     auth: TCPConnectAuth,

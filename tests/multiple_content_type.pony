@@ -8,7 +8,7 @@ actor MultipleContentType is WireCallback
   Multiple Content-Type headers are malformed. Strict servers reject.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-multiple-content-type"
+  let _test_id: String = "rfc9110-8.3-02-multiple-content-type"
 
   new create(
     auth: TCPConnectAuth,

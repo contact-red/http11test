@@ -10,7 +10,7 @@ actor Http10Request is WireCallback
   naturally — perfect for our wire harness.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-http10-request"
+  let _test_id: String = "rfc9112-2.5-03-http10-request"
 
   new create(
     auth: TCPConnectAuth,

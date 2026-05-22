@@ -8,7 +8,7 @@ actor WhitespaceInHeaderValue is WireCallback
   Server must not split or reject on interior whitespace.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-whitespace-in-header-value"
+  let _test_id: String = "rfc9110-5.5-17-internal-whitespace"
 
   new create(
     auth: TCPConnectAuth,

@@ -9,7 +9,7 @@ actor GetWithKbHeaderValue is WireCallback
   limit; over-the-limit responses with 431.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-kb-header-value"
+  let _test_id: String = "rfc9110-5.5-18-kb-value"
 
   new create(
     auth: TCPConnectAuth,

@@ -9,7 +9,7 @@ actor HeaderValueWithColons is WireCallback
   after the first colon is part of the value.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-header-value-colons"
+  let _test_id: String = "rfc9110-5.5-08-value-with-colons"
 
   new create(
     auth: TCPConnectAuth,

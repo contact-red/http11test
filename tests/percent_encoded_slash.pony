@@ -11,7 +11,7 @@ actor PercentEncodedSlash is WireCallback
   some reject. We accept any non-5xx.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-percent-encoded-slash"
+  let _test_id: String = "rfc3986-2.1-03-encoded-slash"
 
   new create(
     auth: TCPConnectAuth,

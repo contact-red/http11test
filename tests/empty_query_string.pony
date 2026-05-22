@@ -9,7 +9,7 @@ actor EmptyQueryString is WireCallback
   Server must accept the bare `?` without rejecting the request.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-empty-query-string"
+  let _test_id: String = "rfc3986-3.4-01-empty-query"
 
   new create(
     auth: TCPConnectAuth,

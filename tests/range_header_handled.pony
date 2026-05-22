@@ -11,7 +11,7 @@ actor RangeHeaderHandled is WireCallback
   that the request doesn't error.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-range-header-handled"
+  let _test_id: String = "rfc9110-14.1-01-range-handled"
 
   new create(
     auth: TCPConnectAuth,

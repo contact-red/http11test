@@ -9,7 +9,7 @@ actor WithClientDate is WireCallback
   server must accept; semantics are server's discretion.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-client-date"
+  let _test_id: String = "rfc9110-6.6.1-04-client-date"
 
   new create(
     auth: TCPConnectAuth,

@@ -10,7 +10,7 @@ actor EmptyHostValue is WireCallback
   (tolerant) or 4xx (strict rejection).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-empty-host-value"
+  let _test_id: String = "rfc9112-3.2-09-empty-host-value"
 
   new create(
     auth: TCPConnectAuth,

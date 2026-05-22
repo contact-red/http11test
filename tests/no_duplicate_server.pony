@@ -10,7 +10,7 @@ actor NoDuplicateServer is WireCallback
   also fine.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-no-duplicate-server"
+  let _test_id: String = "rfc9110-10.2.4-02-no-duplicate-server-resp"
 
   new create(
     auth: TCPConnectAuth,

@@ -10,7 +10,7 @@ actor HeadWithRequestBody is WireCallback
   framing consistent for the next request on the connection.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-head-with-request-body"
+  let _test_id: String = "rfc9110-9.3.2-07-head-with-body"
 
   new create(
     auth: TCPConnectAuth,

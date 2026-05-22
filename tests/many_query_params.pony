@@ -9,7 +9,7 @@ actor ManyQueryParams is WireCallback
   pairs.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-many-query-params"
+  let _test_id: String = "rfc3986-3.4-04-many-params"
 
   new create(
     auth: TCPConnectAuth,

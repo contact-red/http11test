@@ -11,7 +11,7 @@ actor BrowserStyleRequest is WireCallback
   validation that rejects common values).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-browser-style"
+  let _test_id: String = "rfc9110-2-01-browser-style"
 
   new create(
     auth: TCPConnectAuth,

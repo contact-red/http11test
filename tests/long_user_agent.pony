@@ -10,7 +10,7 @@ actor LongUserAgent is WireCallback
   the server accepts realistic UA sizes.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-long-user-agent"
+  let _test_id: String = "rfc9110-10.1.5-02-long-user-agent"
 
   new create(
     auth: TCPConnectAuth,

@@ -11,7 +11,7 @@ actor ManyHeaders is WireCallback
   `X-Request-Id` style headers.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-many-headers"
+  let _test_id: String = "rfc9110-5.3-04-many-headers"
 
   new create(
     auth: TCPConnectAuth,

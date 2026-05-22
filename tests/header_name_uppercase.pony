@@ -8,7 +8,7 @@ actor HeaderNameUppercase is WireCallback
   (all-uppercase) is equivalent to `Host: ...` and must be accepted.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-header-name-uppercase"
+  let _test_id: String = "rfc9110-5.1-01-field-name-case-insensitive"
 
   new create(
     auth: TCPConnectAuth,

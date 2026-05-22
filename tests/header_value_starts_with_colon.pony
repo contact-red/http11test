@@ -9,7 +9,7 @@ actor HeaderValueStartsWithColon is WireCallback
   Server should accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-value-starts-with-colon"
+  let _test_id: String = "rfc9110-5.5-16-value-starts-with-colon"
 
   new create(
     auth: TCPConnectAuth,

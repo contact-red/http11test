@@ -9,7 +9,7 @@ actor WithPragmaNoCache is WireCallback
   no-cache on its own.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-pragma-no-cache"
+  let _test_id: String = "rfc9111-5.4-02-pragma-no-cache"
 
   new create(
     auth: TCPConnectAuth,

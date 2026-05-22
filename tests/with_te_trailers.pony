@@ -9,7 +9,7 @@ actor WithTeTrailers is WireCallback
   is a hint only — server must accept and respond normally.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-te-trailers"
+  let _test_id: String = "rfc9110-10.1.4-01-te-trailers"
 
   new create(
     auth: TCPConnectAuth,

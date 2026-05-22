@@ -9,7 +9,7 @@ actor HeadWithContentLength is WireCallback
   attempt to read body bytes.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-head-with-cl"
+  let _test_id: String = "rfc9110-9.3.2-06-head-with-cl"
 
   new create(
     auth: TCPConnectAuth,

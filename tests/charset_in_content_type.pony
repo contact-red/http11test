@@ -9,7 +9,7 @@ actor CharsetInContentType is WireCallback
   without splitting the header or rejecting.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-charset-in-content-type"
+  let _test_id: String = "rfc9110-8.3-01-content-type-charset"
 
   new create(
     auth: TCPConnectAuth,

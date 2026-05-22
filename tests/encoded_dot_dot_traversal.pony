@@ -13,7 +13,7 @@ actor EncodedDotDotTraversal is WireCallback
   be a security concern.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-encoded-dot-dot"
+  let _test_id: String = "rfc3986-6.2.2-02-encoded-dot-dot"
 
   new create(
     auth: TCPConnectAuth,

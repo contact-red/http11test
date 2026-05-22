@@ -9,7 +9,7 @@ actor HostWithBadPort is WireCallback
   should reject with 400.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-host-with-bad-port"
+  let _test_id: String = "rfc3986-3.2.2-14-non-numeric-port"
 
   new create(
     auth: TCPConnectAuth,

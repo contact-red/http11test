@@ -9,7 +9,7 @@ actor QueryStringEdges is WireCallback
   application-defined query strings; server must pass through.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-query-string-edges"
+  let _test_id: String = "rfc3986-3.4-07-query-edges"
 
   new create(
     auth: TCPConnectAuth,

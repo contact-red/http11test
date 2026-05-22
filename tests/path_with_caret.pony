@@ -8,7 +8,7 @@ actor PathWithCaret is WireCallback
   opaquely — but not crash.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-path-with-caret"
+  let _test_id: String = "rfc3986-3.3-06-path-with-caret"
 
   new create(
     auth: TCPConnectAuth,

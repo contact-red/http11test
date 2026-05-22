@@ -9,7 +9,7 @@ actor InvalidPercentEncoding is WireCallback
   one may treat as opaque bytes. We accept any non-2xx OR 200 (lenient).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-invalid-percent-encoding"
+  let _test_id: String = "rfc3986-2.1-07-invalid-pct-encoding"
 
   new create(
     auth: TCPConnectAuth,

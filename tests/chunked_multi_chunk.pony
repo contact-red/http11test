@@ -8,7 +8,7 @@ actor ChunkedMultiChunk is WireCallback
   decoder's loop transition.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-chunked-multi-chunk"
+  let _test_id: String = "rfc9112-7-02-multi-chunk"
 
   new create(
     auth: TCPConnectAuth,

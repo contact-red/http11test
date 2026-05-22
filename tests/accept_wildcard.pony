@@ -10,7 +10,7 @@ actor AcceptWildcard is WireCallback
   refuses `*/*` would fail to serve clients that don't enumerate types.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-accept-wildcard"
+  let _test_id: String = "rfc9110-12.5.1-04-wildcard"
 
   new create(
     auth: TCPConnectAuth,

@@ -8,7 +8,7 @@ actor HostWithInternalSpace is WireCallback
   should respond 400.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-host-internal-space"
+  let _test_id: String = "rfc3986-3.2.2-19-internal-space"
 
   new create(
     auth: TCPConnectAuth,

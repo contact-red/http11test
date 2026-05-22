@@ -9,7 +9,7 @@ actor HeaderValueWithQuotes is WireCallback
   quoted value containing internal whitespace and punctuation.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-header-value-quoted"
+  let _test_id: String = "rfc9110-5.5-12-quoted-value"
 
   new create(
     auth: TCPConnectAuth,

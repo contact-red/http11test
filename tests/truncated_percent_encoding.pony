@@ -9,7 +9,7 @@ actor TruncatedPercentEncoding is WireCallback
   parsers return 400; lenient ones may treat opaquely or 404.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-truncated-percent-encoding"
+  let _test_id: String = "rfc3986-2.1-06-truncated-pct-encoding"
 
   new create(
     auth: TCPConnectAuth,

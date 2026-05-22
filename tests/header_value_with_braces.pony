@@ -9,7 +9,7 @@ actor HeaderValueWithBraces is WireCallback
   VCHARs per RFC 9110 §5.5 grammar and so are legal in field-content.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-header-value-braces"
+  let _test_id: String = "rfc9110-5.5-07-value-with-braces"
 
   new create(
     auth: TCPConnectAuth,

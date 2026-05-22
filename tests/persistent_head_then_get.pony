@@ -10,7 +10,7 @@ actor PersistentHeadThenGet is WireCallback
   has no body, so no offset is needed beyond the header terminator).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-persistent-head-then-get"
+  let _test_id: String = "rfc9112-9.3-03-head-then-get"
 
   new create(
     auth: TCPConnectAuth,

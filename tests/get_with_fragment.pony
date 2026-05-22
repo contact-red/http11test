@@ -11,7 +11,7 @@ actor GetWithFragment is WireCallback
   non-5xx so this works against both lenient and strict servers.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-get-with-fragment"
+  let _test_id: String = "rfc9110-7.1-01-fragment-in-target"
 
   new create(
     auth: TCPConnectAuth,

@@ -9,7 +9,7 @@ actor WithWarningHeader is WireCallback
   failing.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-warning-header"
+  let _test_id: String = "rfc9111-5.5-01-warning-header"
 
   new create(
     auth: TCPConnectAuth,

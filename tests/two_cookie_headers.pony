@@ -12,7 +12,7 @@ actor TwoCookieHeaders is WireCallback
   should still be tolerated.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-two-cookie-headers"
+  let _test_id: String = "rfc6265-5.4-02-two-cookie-headers"
 
   new create(
     auth: TCPConnectAuth,

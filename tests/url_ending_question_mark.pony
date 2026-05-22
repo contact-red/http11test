@@ -8,7 +8,7 @@ actor UrlEndingQuestionMark is WireCallback
   Valid per RFC 3986; server should serve as if no query.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-url-ending-question-mark"
+  let _test_id: String = "rfc3986-3.4-09-trailing-question-mark"
 
   new create(
     auth: TCPConnectAuth,

@@ -10,7 +10,7 @@ actor MultipleAcceptLines is WireCallback
   same as `Accept: text/html, text/plain`.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-multiple-accept-lines"
+  let _test_id: String = "rfc9110-5.3-01-multiple-list-lines"
 
   new create(
     auth: TCPConnectAuth,

@@ -9,7 +9,7 @@ actor AllTcharsHeaderName is WireCallback
   technically valid. Server must accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-all-tchars-header-name"
+  let _test_id: String = "rfc9110-5.6.2-04-all-tchars-field-name"
 
   new create(
     auth: TCPConnectAuth,

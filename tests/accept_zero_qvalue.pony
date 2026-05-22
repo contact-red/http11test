@@ -12,7 +12,7 @@ actor AcceptZeroQvalue is WireCallback
   we accept any non-5xx response.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-accept-zero-qvalue"
+  let _test_id: String = "rfc9110-12.5.1-06-zero-qvalue"
 
   new create(
     auth: TCPConnectAuth,

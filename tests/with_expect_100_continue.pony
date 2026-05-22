@@ -11,7 +11,7 @@ actor WithExpect100Continue is WireCallback
   documented behaviors.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-expect-100"
+  let _test_id: String = "rfc9110-10.1.1-04-expect-100-get"
 
   new create(
     auth: TCPConnectAuth,

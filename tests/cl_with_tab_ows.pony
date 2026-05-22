@@ -8,7 +8,7 @@ actor ClWithTabOws is WireCallback
   (tabs around the value) should be stripped to `5` and processed.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-cl-tab-ows"
+  let _test_id: String = "rfc9110-8.6-10-cl-tab-ows"
 
   new create(
     auth: TCPConnectAuth,

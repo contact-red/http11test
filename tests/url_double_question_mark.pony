@@ -9,7 +9,7 @@ actor UrlDoubleQuestionMark is WireCallback
   permits any pchar / "/" / "?" in the query). Server must accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-url-double-question-mark"
+  let _test_id: String = "rfc3986-3.4-08-double-question-mark"
 
   new create(
     auth: TCPConnectAuth,

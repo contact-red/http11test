@@ -9,7 +9,7 @@ actor HeaderValueLeadingTab is WireCallback
   `X-Test:\\tvalue\\r\\n` and expect 2xx.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-header-value-leading-tab"
+  let _test_id: String = "rfc9110-5.5-10-leading-tab-ows"
 
   new create(
     auth: TCPConnectAuth,

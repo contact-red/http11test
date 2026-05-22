@@ -9,7 +9,7 @@ actor FiveGetPipeline is WireCallback
   _ExpectRequestLine cleanly after each request.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-five-get-pipeline"
+  let _test_id: String = "rfc9112-9.3-02-five-get-pipeline"
 
   new create(
     auth: TCPConnectAuth,

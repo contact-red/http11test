@@ -15,7 +15,7 @@ actor BodyLongerThanCl is WireCallback
   framing, is vulnerable.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-body-longer-than-cl"
+  let _test_id: String = "rfc9110-8.6-07-body-longer-than-cl"
 
   new create(
     auth: TCPConnectAuth,

@@ -11,7 +11,7 @@ actor PercentEncodedPath is WireCallback
   return 200 if they have a catch-all, or 404 if they don't).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-percent-encoded-path"
+  let _test_id: String = "rfc3986-2.1-02-percent-encoded-path"
 
   new create(
     auth: TCPConnectAuth,

@@ -9,7 +9,7 @@ actor HostAsIp is WireCallback
   literals in the Host header just like FQDNs.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-host-as-ip"
+  let _test_id: String = "rfc3986-3.2.2-12-host-as-ipv4"
 
   new create(
     auth: TCPConnectAuth,

@@ -10,7 +10,7 @@ actor OptionsWithBody is WireCallback
   respond normally.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-options-with-body"
+  let _test_id: String = "rfc9110-9.3.7-03-options-with-body"
 
   new create(
     auth: TCPConnectAuth,

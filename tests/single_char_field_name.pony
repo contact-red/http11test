@@ -8,7 +8,7 @@ actor SingleCharFieldName is WireCallback
   `A: value` is well-formed. Server must accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-single-char-field-name"
+  let _test_id: String = "rfc9110-5.6.2-07-single-char-name"
 
   new create(
     auth: TCPConnectAuth,

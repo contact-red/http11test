@@ -8,7 +8,7 @@ actor ChunkedWithExtension is WireCallback
   `;`. Servers MUST accept and ignore unknown chunk-extensions.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-chunked-with-extension"
+  let _test_id: String = "rfc9112-7.1.1-04-chunk-ext-value"
 
   new create(
     auth: TCPConnectAuth,

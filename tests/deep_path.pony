@@ -9,7 +9,7 @@ actor DeepPath is WireCallback
   size limits). We use 20 segments.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-deep-path"
+  let _test_id: String = "rfc3986-3.3-01-deep-path"
 
   new create(
     auth: TCPConnectAuth,

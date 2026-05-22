@@ -12,7 +12,7 @@ actor ConnectionUpgradeOnly is WireCallback
   and respond normally.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-connection-upgrade-only"
+  let _test_id: String = "rfc9110-7.6.1-06-upgrade-token"
 
   new create(
     auth: TCPConnectAuth,

@@ -12,7 +12,7 @@ actor NoDuplicateConnection is WireCallback
   short response can also be signalled by other framing).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-no-duplicate-connection-resp"
+  let _test_id: String = "rfc9110-7.6.1-07-no-dup-resp"
 
   new create(
     auth: TCPConnectAuth,

@@ -10,7 +10,7 @@ actor NoDuplicateContentLength is WireCallback
   header on a 200 GET / response.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-no-duplicate-content-length"
+  let _test_id: String = "rfc9110-8.6-13-no-duplicate-cl-resp"
 
   new create(
     auth: TCPConnectAuth,

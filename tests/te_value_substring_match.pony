@@ -21,7 +21,7 @@ actor TeValueSubstringMatch is WireCallback
   indicates the substring-vs-token bug.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-te-substring-match"
+  let _test_id: String = "rfc9112-6.1-07-te-substring-match"
 
   new create(
     auth: TCPConnectAuth,

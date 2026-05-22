@@ -9,7 +9,7 @@ actor HostWithIpv6 is WireCallback
   accept the bracketed form.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-host-ipv6-literal"
+  let _test_id: String = "rfc3986-3.2.2-20-ipv6-literal"
 
   new create(
     auth: TCPConnectAuth,

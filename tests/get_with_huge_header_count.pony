@@ -10,7 +10,7 @@ actor GetWithHugeHeaderCount is WireCallback
   somewhere between 64 and 256 headers; over-the-limit yields 431.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-huge-header-count"
+  let _test_id: String = "rfc9110-5.3-05-many-distinct-headers"
 
   new create(
     auth: TCPConnectAuth,

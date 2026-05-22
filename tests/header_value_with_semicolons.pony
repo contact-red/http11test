@@ -9,7 +9,7 @@ actor HeaderValueWithSemicolons is WireCallback
   pass through opaque values without splitting on `;`.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-header-value-semicolons"
+  let _test_id: String = "rfc9110-5.5-13-value-with-semicolons"
 
   new create(
     auth: TCPConnectAuth,

@@ -9,7 +9,7 @@ actor AcceptWithQvalues is WireCallback
   output. Server must accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-accept-with-qvalues"
+  let _test_id: String = "rfc9110-12.5.1-05-qvalues"
 
   new create(
     auth: TCPConnectAuth,

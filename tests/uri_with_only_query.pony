@@ -9,7 +9,7 @@ actor UriWithOnlyQuery is WireCallback
   leading slash) is malformed. Server should respond 400.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-uri-only-query"
+  let _test_id: String = "rfc9112-3.2.1-01-no-leading-slash"
 
   new create(
     auth: TCPConnectAuth,

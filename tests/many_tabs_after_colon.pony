@@ -9,7 +9,7 @@ actor ManyTabsAfterColon is WireCallback
   should strip them all.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-many-tabs-after-colon"
+  let _test_id: String = "rfc9110-5.5-15-many-tabs-ows"
 
   new create(
     auth: TCPConnectAuth,

@@ -11,7 +11,7 @@ actor AcceptMultipleTypes is WireCallback
   to exercise the comma+semicolon list parser.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-accept-multiple-types"
+  let _test_id: String = "rfc9110-12.5.1-01-multiple-types"
 
   new create(
     auth: TCPConnectAuth,

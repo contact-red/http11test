@@ -9,7 +9,7 @@ actor DeleteWithBody is WireCallback
   framing consistent for the next request on the connection.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-delete-with-body"
+  let _test_id: String = "rfc9110-9.3.5-02-delete-with-body"
 
   new create(
     auth: TCPConnectAuth,

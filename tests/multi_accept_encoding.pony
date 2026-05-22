@@ -10,7 +10,7 @@ actor MultiAcceptEncoding is WireCallback
   even when not listed).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-multi-accept-encoding"
+  let _test_id: String = "rfc9110-12.5.3-04-multi-ae"
 
   new create(
     auth: TCPConnectAuth,

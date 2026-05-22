@@ -8,7 +8,7 @@ actor PathWithAtSign is WireCallback
   path. Common in social-media URL schemes.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-path-with-at-sign"
+  let _test_id: String = "rfc3986-3.3-04-path-with-at-sign"
 
   new create(
     auth: TCPConnectAuth,

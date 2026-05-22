@@ -10,7 +10,7 @@ actor LowercaseMethod is WireCallback
   (200). All three outcomes are documented.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-lowercase-method"
+  let _test_id: String = "rfc9110-9.1-06-lowercase-method"
 
   new create(
     auth: TCPConnectAuth,

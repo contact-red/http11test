@@ -9,7 +9,7 @@ actor PlusInQuery is WireCallback
   rejecting the request.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-plus-in-query"
+  let _test_id: String = "rfc3986-3.4-05-plus-in-query"
 
   new create(
     auth: TCPConnectAuth,

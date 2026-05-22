@@ -9,7 +9,7 @@ actor WithOrigin is WireCallback
   the right preflight decisions. Even non-CORS servers must accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-origin"
+  let _test_id: String = "rfc6454-7-01-origin"
 
   new create(
     auth: TCPConnectAuth,

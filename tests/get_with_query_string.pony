@@ -9,7 +9,7 @@ actor GetWithQueryString is WireCallback
   trip over `?`, `=`, or `&` in the request-line.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-query-string"
+  let _test_id: String = "rfc3986-3.4-10-get-with-query"
 
   new create(
     auth: TCPConnectAuth,

@@ -8,7 +8,7 @@ actor RangeSuffix is WireCallback
   Server returns 206 if supported, 200 if not, or 416 if too large.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-range-suffix"
+  let _test_id: String = "rfc9110-14.1.2-04-suffix-range"
 
   new create(
     auth: TCPConnectAuth,

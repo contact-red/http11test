@@ -10,7 +10,7 @@ actor ChunkedExtensionEmpty is WireCallback
   decodes the chunk and responds normally.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-chunked-extension-empty"
+  let _test_id: String = "rfc9112-7.1.1-01-chunk-ext-empty"
 
   new create(
     auth: TCPConnectAuth,

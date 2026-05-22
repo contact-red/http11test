@@ -10,7 +10,7 @@ actor PercentCrlfInPath is WireCallback
   not interpret the decoded CRLF as a request boundary.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-percent-crlf-in-path"
+  let _test_id: String = "rfc3986-2.1-01-percent-crlf-in-path"
 
   new create(
     auth: TCPConnectAuth,

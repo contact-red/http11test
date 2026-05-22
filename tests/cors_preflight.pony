@@ -11,7 +11,7 @@ actor CorsPreflight is WireCallback
   verify the server doesn't error.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-cors-preflight"
+  let _test_id: String = "fetch-3.2.6-01-cors-preflight"
 
   new create(
     auth: TCPConnectAuth,

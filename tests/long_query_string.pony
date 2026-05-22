@@ -10,7 +10,7 @@ actor LongQueryString is WireCallback
   limit but bigger than trivially small).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-long-query-string"
+  let _test_id: String = "rfc3986-3.4-02-long-query"
 
   new create(
     auth: TCPConnectAuth,

@@ -11,7 +11,7 @@ actor GetWithBody is WireCallback
   is the failure we're hunting.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-get-with-body"
+  let _test_id: String = "rfc9110-9.3.1-02-get-with-body"
 
   new create(
     auth: TCPConnectAuth,

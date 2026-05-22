@@ -8,7 +8,7 @@ actor PathWithEncodedSpace is WireCallback
   appear like this. Server must accept (and may normalize to space).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-path-encoded-space"
+  let _test_id: String = "rfc3986-2.1-08-encoded-space"
 
   new create(
     auth: TCPConnectAuth,

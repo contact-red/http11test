@@ -9,7 +9,7 @@ actor ClWithTrailingSpace is WireCallback
   after trimming. Server must accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-cl-trailing-space"
+  let _test_id: String = "rfc9110-8.6-11-cl-trailing-space"
 
   new create(
     auth: TCPConnectAuth,

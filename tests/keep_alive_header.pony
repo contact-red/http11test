@@ -9,7 +9,7 @@ actor KeepAliveHeader is WireCallback
   server should ignore but accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-keep-alive-header"
+  let _test_id: String = "rfc9110-7.6.1-08-keep-alive-header"
 
   new create(
     auth: TCPConnectAuth,

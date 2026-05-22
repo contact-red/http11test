@@ -8,7 +8,7 @@ actor WithXCustomHeader is WireCallback
   9110 §16.3 — extension fields). We use a long, dotted name.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-x-custom-header"
+  let _test_id: String = "rfc9110-16.3.2-01-x-custom"
 
   new create(
     auth: TCPConnectAuth,

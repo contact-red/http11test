@@ -9,7 +9,7 @@ actor RangeOpenEnded is WireCallback
   that do respond 206. Either is acceptable.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-range-open-ended"
+  let _test_id: String = "rfc9110-14.1.2-03-open-ended"
 
   new create(
     auth: TCPConnectAuth,

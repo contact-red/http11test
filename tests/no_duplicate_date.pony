@@ -10,7 +10,7 @@ actor NoDuplicateDate is WireCallback
   servers that opt out per the rare exceptions).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-no-duplicate-date"
+  let _test_id: String = "rfc9110-6.6.1-03-no-duplicate-date-resp"
 
   new create(
     auth: TCPConnectAuth,

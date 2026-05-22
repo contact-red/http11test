@@ -9,7 +9,7 @@ actor ConnectionTeToken is WireCallback
   is a real-world shape from proxies — server must close and respond.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-connection-te-token"
+  let _test_id: String = "rfc9110-7.6.1-05-te-token"
 
   new create(
     auth: TCPConnectAuth,

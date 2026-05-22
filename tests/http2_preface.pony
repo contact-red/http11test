@@ -10,7 +10,7 @@ actor Http2Preface is WireCallback
   MUST NOT honor `PRI *` as if it were an HTTP/1.1 OPTIONS.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-http2-preface"
+  let _test_id: String = "rfc9112-2.5-04-http2-preface"
 
   new create(
     auth: TCPConnectAuth,

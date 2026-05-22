@@ -8,7 +8,7 @@ actor ForwardedHeader is WireCallback
   load balancers. Server must accept the structured value.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-forwarded-header"
+  let _test_id: String = "rfc7239-1-02-forwarded"
 
   new create(
     auth: TCPConnectAuth,

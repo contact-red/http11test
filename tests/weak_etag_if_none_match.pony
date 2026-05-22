@@ -9,7 +9,7 @@ actor WeakEtagIfNoneMatch is WireCallback
   process or ignore but not error.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-weak-etag-if-none-match"
+  let _test_id: String = "rfc9110-8.8.3-01-weak-etag"
 
   new create(
     auth: TCPConnectAuth,

@@ -8,7 +8,7 @@ actor WithMaxForwards is WireCallback
   9110 §7.6.2 it must be accepted and ignored on other methods.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-max-forwards"
+  let _test_id: String = "rfc9110-7.6.2-01-max-forwards"
 
   new create(
     auth: TCPConnectAuth,

@@ -11,7 +11,7 @@ actor PostClZeroWithBodyBytes is WireCallback
   garbage (depending on whether it parses the garbage as a request).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-post-cl-zero-with-body-bytes"
+  let _test_id: String = "rfc9110-9.3.3-02-post-cl-zero-bytes"
 
   new create(
     auth: TCPConnectAuth,

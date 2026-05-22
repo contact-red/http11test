@@ -9,7 +9,7 @@ actor ChunkedWithTrailer is WireCallback
   marker and the final CRLF.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-chunked-with-trailer"
+  let _test_id: String = "rfc9112-7.1.2-01-chunk-trailer"
 
   new create(
     auth: TCPConnectAuth,

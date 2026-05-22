@@ -9,7 +9,7 @@ actor EmptyAcceptEncoding is WireCallback
   Content-Encoding header).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-empty-accept-encoding"
+  let _test_id: String = "rfc9110-12.5.3-03-empty-ae"
 
   new create(
     auth: TCPConnectAuth,

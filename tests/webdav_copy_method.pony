@@ -9,7 +9,7 @@ actor WebdavCopyMethod is WireCallback
   Implemented — but accept the request line.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-webdav-copy"
+  let _test_id: String = "rfc4918-9.8-01-copy-method"
 
   new create(
     auth: TCPConnectAuth,

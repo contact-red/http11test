@@ -11,7 +11,7 @@ actor AcceptEncodingIdentity is WireCallback
   is in the accept set.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-accept-encoding-identity"
+  let _test_id: String = "rfc9110-12.5.3-01-identity"
 
   new create(
     auth: TCPConnectAuth,

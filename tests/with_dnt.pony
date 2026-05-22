@@ -9,7 +9,7 @@ actor WithDnt is WireCallback
   not break.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-dnt"
+  let _test_id: String = "rfc9110-5.3-02-dnt-header"
 
   new create(
     auth: TCPConnectAuth,

@@ -9,7 +9,7 @@ actor DoubleSlashAtRoot is WireCallback
   Server may normalize or serve as-is.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-double-slash-root"
+  let _test_id: String = "rfc3986-3.3-02-double-slash-root"
 
   new create(
     auth: TCPConnectAuth,

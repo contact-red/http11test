@@ -11,7 +11,7 @@ actor EmptyRequestThenClose is WireCallback
   empty) or it returns an HTTP error response.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-empty-request-then-close"
+  let _test_id: String = "rfc9112-9.3-07-empty-request"
 
   new create(
     auth: TCPConnectAuth,

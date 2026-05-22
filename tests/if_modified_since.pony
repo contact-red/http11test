@@ -12,7 +12,7 @@ actor IfModifiedSinceOld is WireCallback
   modified.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-if-modified-since"
+  let _test_id: String = "rfc9110-13.1.3-06-ims"
 
   new create(
     auth: TCPConnectAuth,

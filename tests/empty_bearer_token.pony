@@ -9,7 +9,7 @@ actor EmptyBearerToken is WireCallback
   decides whether to honor it.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-empty-bearer-token"
+  let _test_id: String = "rfc6750-2-01-empty-bearer"
 
   new create(
     auth: TCPConnectAuth,

@@ -10,7 +10,7 @@ actor PathWithSpecialChars is WireCallback
   parser doesn't reject them.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-path-special-chars"
+  let _test_id: String = "rfc3986-3.3-13-sub-delims"
 
   new create(
     auth: TCPConnectAuth,

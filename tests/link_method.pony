@@ -9,7 +9,7 @@ actor LinkMethod is WireCallback
   Not Allowed — but not crash.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-link-method"
+  let _test_id: String = "rfc9110-9.1-02-link-method"
 
   new create(
     auth: TCPConnectAuth,

@@ -9,7 +9,7 @@ actor ChunkedSizeWithLowercaseHex is WireCallback
   lowercase case (`a`).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-chunked-lowercase-hex"
+  let _test_id: String = "rfc9112-7.1.1-02-chunk-lowercase-hex"
 
   new create(
     auth: TCPConnectAuth,

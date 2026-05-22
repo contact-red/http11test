@@ -11,7 +11,7 @@ actor PathDoubleEncodedTraversal is WireCallback
   server that reaches outside the document root.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-double-encoded-traversal"
+  let _test_id: String = "rfc3986-6.2.2-01-double-encoded-traversal"
 
   new create(
     auth: TCPConnectAuth,

@@ -8,7 +8,7 @@ actor WithVia is WireCallback
   sees it. Server must accept (and typically ignore at the origin).
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-with-via"
+  let _test_id: String = "rfc9110-7.6.3-01-via"
 
   new create(
     auth: TCPConnectAuth,

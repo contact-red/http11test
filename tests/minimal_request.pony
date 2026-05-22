@@ -10,7 +10,7 @@ actor MinimalRequest is WireCallback
   is broken.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-minimal-request"
+  let _test_id: String = "rfc9112-2-01-minimal-request"
 
   new create(
     auth: TCPConnectAuth,

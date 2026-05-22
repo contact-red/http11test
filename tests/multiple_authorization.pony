@@ -9,7 +9,7 @@ actor MultipleAuthorization is WireCallback
   MAY use only the first/last. We accept any HTTP response.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-multiple-authorization"
+  let _test_id: String = "rfc9110-11-01-multiple-auth"
 
   new create(
     auth: TCPConnectAuth,

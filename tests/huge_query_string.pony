@@ -8,7 +8,7 @@ actor HugeQueryString is WireCallback
   analytics URLs, or token-encoded payloads. Server must accept.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-huge-query-string"
+  let _test_id: String = "rfc3986-3.4-03-huge-query"
 
   new create(
     auth: TCPConnectAuth,

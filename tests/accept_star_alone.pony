@@ -9,7 +9,7 @@ actor AcceptStarAlone is WireCallback
   may reject; lenient servers may treat as `*/*`.
   """
   let _reporter: Reporter
-  let _test_id: String = "interop-accept-star-alone"
+  let _test_id: String = "rfc9110-12.5.1-02-star-alone"
 
   new create(
     auth: TCPConnectAuth,
