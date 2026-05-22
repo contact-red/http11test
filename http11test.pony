@@ -37,7 +37,7 @@ actor Main
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 227)
+    let reporter = Reporter(env, cases.size() + 233)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -270,3 +270,9 @@ actor Main
     HostWithInternalSpace(auth, host, service, reporter)
     PathDoubleEncodedTraversal(auth, host, service, reporter)
     HostWithLeadingDot(auth, host, service, reporter)
+    UnknownExpectation(auth, host, service, reporter)
+    ConflictingConnectionLines(auth, host, service, reporter)
+    HeadWithRequestBody(auth, host, service, reporter)
+    ManyTabsAfterColon(auth, host, service, reporter)
+    HeaderValueStartsWithColon(auth, host, service, reporter)
+    GetHugeHostName(auth, host, service, reporter)
