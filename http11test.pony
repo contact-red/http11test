@@ -36,7 +36,7 @@ actor Main
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 203)
+    let reporter = Reporter(env, cases.size() + 210)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -244,3 +244,10 @@ actor Main
     HeaderValueWithEquals(auth, host, service, reporter)
     ConnectionTeToken(auth, host, service, reporter)
     NoHostHeader(auth, host, service, reporter)
+    Http2Preface(auth, host, service, reporter)
+    BrotliAcceptEncoding(auth, host, service, reporter)
+    OriginNull(auth, host, service, reporter)
+    LinkMethod(auth, host, service, reporter)
+    ProxyAuthorization(auth, host, service, reporter)
+    WeakEtagIfNoneMatch(auth, host, service, reporter)
+    MultipleContentType(auth, host, service, reporter)
