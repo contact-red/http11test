@@ -68,7 +68,14 @@ jobs:
 
       - name: Run the suite against each target
         run: |
+          # Run all 9 suites in parallel. Some servers (caddy, stallion)
+          # don't respond to certain probes and the wire client waits
+          # for connection close — bounding each suite at 2 minutes
+          # keeps one hung target from blocking the others or the job.
+          # Truncated suites are surfaced in the scoreboard as missing
+          # tests rather than blocking the entire job.
           mkdir -p results
+          pids=()
           for port in 18080 18081 18082 18083 18084 18085 18086 18087 18088; do
             case $port in
               18080) name=nginx ;;
@@ -81,7 +88,13 @@ jobs:
               18087) name=hyper ;;
               18088) name=stallion ;;
             esac
-            ./http11test localhost "$port" > "results/$name.txt" || true
+            (timeout 120 ./http11test localhost "$port" > "results/$name.txt" 2>&1 || true) &
+            pids+=($!)
+          done
+          for pid in "${pids[@]}"; do
+            wait "$pid" || true
+          done
+          for name in nginx apache caddy bandit cowboy lighttpd haproxy hyper stallion; do
             echo "--- $name ---"
             tail -1 "results/$name.txt"
           done
