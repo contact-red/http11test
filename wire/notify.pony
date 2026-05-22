@@ -1,4 +1,5 @@
 use "net"
+use "time"
 
 interface tag WireCallback
   """
@@ -11,25 +12,22 @@ interface tag WireCallback
 
 class _WireNotify is TCPConnectionNotify
   """
-  Drives one HTTP request: writes the request bytes on `connected`, accumulates
-  every byte the server sends in `received`, and hands the snapshot to the
-  callback on `closed`. Treats connect failure and unexpected close-before-data
-  as error conditions.
+  Adapter that forwards lori/net callbacks back to the owning
+  WireClient actor as async behaviors. State (buffer, completion flag)
+  lives in the actor so the timeout race is decided in one place.
   """
-  let _callback: WireCallback
+  let _client: WireClient
   let _request: ByteSeq
-  var _buf: Array[U8] iso
 
-  new iso create(callback: WireCallback, request: ByteSeq) =>
-    _callback = callback
+  new iso create(client: WireClient, request: ByteSeq) =>
+    _client = client
     _request = request
-    _buf = recover Array[U8] end
 
   fun ref connected(conn: TCPConnection ref) =>
     conn.write(_request)
 
   fun ref connect_failed(conn: TCPConnection ref) =>
-    _callback.on_error("connect_failed")
+    _client._on_connect_failed()
 
   fun ref received(
     conn: TCPConnection ref,
@@ -37,9 +35,21 @@ class _WireNotify is TCPConnectionNotify
     times: USize)
     : Bool
   =>
-    _buf.append(consume data)
+    _client._on_data(consume data)
     true
 
   fun ref closed(conn: TCPConnection ref) =>
-    let snapshot = _buf = recover Array[U8] end
-    _callback.on_response(consume snapshot)
+    _client._on_closed()
+
+class _TimeoutNotify is TimerNotify
+  """
+  One-shot timer that delivers the per-test timeout to WireClient.
+  """
+  let _client: WireClient
+
+  new iso create(client: WireClient) =>
+    _client = client
+
+  fun ref apply(timer: Timer, count: U64): Bool =>
+    _client._on_timeout()
+    false
