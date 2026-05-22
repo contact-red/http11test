@@ -32,11 +32,12 @@ actor Main
         NoRequestLineJustCrlf(host)
         TabBeforeColon(host)
         MethodWithSpace(host)
+        TabBetweenMethodAndTarget(host)
       ]
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 222)
+    let reporter = Reporter(env, cases.size() + 227)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -264,3 +265,8 @@ actor Main
     PathWithEncodedSpace(auth, host, service, reporter)
     DigestAuthorization(auth, host, service, reporter)
     EmptyBearerToken(auth, host, service, reporter)
+    GetWithStarTarget(auth, host, service, reporter)
+    HeadWithContentLength(auth, host, service, reporter)
+    HostWithInternalSpace(auth, host, service, reporter)
+    PathDoubleEncodedTraversal(auth, host, service, reporter)
+    HostWithLeadingDot(auth, host, service, reporter)
