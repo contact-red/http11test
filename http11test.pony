@@ -37,7 +37,7 @@ actor Main
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 251)
+    let reporter = Reporter(env, cases.size() + 256)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -294,3 +294,8 @@ actor Main
     PriorityHeader(auth, host, service, reporter)
     SaveDataHeader(auth, host, service, reporter)
     HeaderValueTrailingComma(auth, host, service, reporter)
+    MethodAllDigits(auth, host, service, reporter)
+    MethodWithHyphen(auth, host, service, reporter)
+    HttpVersionLeadingZero(auth, host, service, reporter)
+    ManyPipelinedGets(auth, host, service, reporter)
+    HostWithQuestionMark(auth, host, service, reporter)
