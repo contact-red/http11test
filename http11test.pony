@@ -36,7 +36,7 @@ actor Main
     end
 
     // Count: RejectSpec list + any custom-shape tests instantiated below.
-    let reporter = Reporter(env, cases.size() + 209)
+    let reporter = Reporter(env, cases.size() + 215)
 
     for spec in cases.values() do
       RejectRunner(auth, host, service, spec, reporter)
@@ -251,3 +251,9 @@ actor Main
     ProxyAuthorization(auth, host, service, reporter)
     WeakEtagIfNoneMatch(auth, host, service, reporter)
     MultipleContentType(auth, host, service, reporter)
+    BareLfRequest(auth, host, service, reporter)
+    TeBeforeClSmuggling(auth, host, service, reporter)
+    ClBeforeTeSmuggling(auth, host, service, reporter)
+    KeepAliveHeader(auth, host, service, reporter)
+    PostHeadPipeline(auth, host, service, reporter)
+    EmptyRequestThenClose(auth, host, service, reporter)
