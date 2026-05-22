@@ -1,6 +1,6 @@
-# http11test scoreboard — 2026-05-22T025308Z
+# http11test scoreboard — 2026-05-22T033718Z
 
-9 servers × 223 tests.
+9 servers × 236 tests.
 
 **Legend:** P = pass · **F** = fail (bold) · **T** = timeout (server did not respond within deadline) · S = skip (test inapplicable)
 
@@ -13,10 +13,12 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `interop-1-char-special-tchar-name` | P | P | P | P | P | P | P | P | P |
 | `interop-accept-encoding-identity` | P | P | P | P | P | P | P | P | P |
 | `interop-accept-multiple-types` | P | P | P | P | P | P | P | P | P |
+| `interop-accept-star-alone` | P | P | P | P | P | P | P | P | P |
 | `interop-accept-wildcard` | P | P | P | P | P | P | P | P | P |
 | `interop-accept-with-qvalues` | P | P | P | P | P | P | P | P | P |
 | `interop-accept-zero-qvalue` | P | P | P | P | P | P | P | P | P |
 | `interop-all-tchars-header-name` | P | P | P | P | P | P | P | P | P |
+| `interop-bare-lf-request` | P | P | P | P | P | P | P | P | **T** |
 | `interop-body-longer-than-cl` | P | P | P | P | P | P | P | P | P |
 | `interop-brotli-accept-encoding` | P | P | P | P | P | P | P | P | P |
 | `interop-browser-style` | P | P | P | P | P | P | P | P | P |
@@ -36,15 +38,19 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `interop-cors-preflight` | P | P | P | P | P | P | P | P | P |
 | `interop-deep-path` | P | P | P | P | P | P | P | P | P |
 | `interop-delete-method` | P | P | P | P | P | P | P | P | P |
+| `interop-delete-with-body` | P | P | P | P | P | P | P | P | P |
+| `interop-digest-authorization` | P | P | P | P | P | P | P | P | P |
 | `interop-digit-only-header-name` | P | P | P | P | P | P | P | P | P |
 | `interop-double-slash-root` | P | P | P | P | P | P | P | P | P |
 | `interop-double-te-chunked` | P | P | P | P | P | P | P | P | P |
 | `interop-duplicate-cl-same-value` | P | P | P | P | P | P | P | P | P |
 | `interop-duplicate-x-custom-header` | P | P | P | P | P | P | P | P | P |
 | `interop-empty-accept-encoding` | P | P | P | P | P | P | P | P | P |
+| `interop-empty-bearer-token` | P | P | P | P | P | P | P | P | P |
 | `interop-empty-header-value` | P | P | P | P | P | P | P | P | P |
 | `interop-empty-host-value` | P | P | P | P | P | P | P | P | P |
 | `interop-empty-query-string` | P | P | P | P | P | P | P | P | P |
+| `interop-empty-request-then-close` | P | P | P | P | P | P | P | P | P |
 | `interop-empty-user-agent` | P | P | P | P | P | P | P | P | P |
 | `interop-encoded-dot-dot` | P | P | P | P | P | P | P | P | P |
 | `interop-expect-100-with-body` | P | P | P | P | P | P | P | P | P |
@@ -78,6 +84,7 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `interop-if-none-match` | P | P | P | P | P | P | P | P | P |
 | `interop-invalid-percent-encoding` | P | P | P | P | P | P | P | P | P |
 | `interop-kb-header-value` | P | P | P | P | P | P | P | P | P |
+| `interop-keep-alive-header` | P | P | P | P | P | P | P | P | P |
 | `interop-leading-ows-in-header` | P | P | P | P | P | P | P | P | P |
 | `interop-link-method` | P | P | P | P | P | P | P | P | P |
 | `interop-long-method-name` | P | P | P | P | P | P | P | P | P |
@@ -99,6 +106,7 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `interop-options-with-body` | P | P | P | P | P | P | P | P | P |
 | `interop-origin-null` | P | P | P | P | P | P | P | P | P |
 | `interop-patch-with-body` | P | P | P | P | P | P | P | P | P |
+| `interop-path-encoded-space` | P | P | P | P | P | P | P | P | P |
 | `interop-path-special-chars` | P | P | P | P | P | P | P | P | P |
 | `interop-path-with-at-sign` | P | P | P | P | P | P | P | P | P |
 | `interop-path-with-dot-dot` | P | P | P | P | P | P | P | P | P |
@@ -117,6 +125,7 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `interop-proxy-authorization` | P | P | P | P | P | P | P | P | P |
 | `interop-put-with-body` | P | P | P | P | P | P | P | P | P |
 | `interop-query-string` | P | P | P | P | P | P | P | P | P |
+| `interop-query-string-edges` | P | P | P | P | P | P | P | P | P |
 | `interop-range-header-handled` | P | P | P | P | P | P | P | P | P |
 | `interop-range-multiple-byteranges` | P | P | P | P | P | P | P | P | P |
 | `interop-range-open-ended` | P | P | P | P | P | P | P | P | P |
@@ -131,6 +140,7 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `interop-url-double-question-mark` | P | P | P | P | P | P | P | P | P |
 | `interop-url-ending-question-mark` | P | P | P | P | P | P | P | P | P |
 | `interop-weak-etag-if-none-match` | P | P | P | P | P | P | P | P | P |
+| `interop-webdav-copy` | P | P | P | P | P | P | P | P | P |
 | `interop-whitespace-in-header-value` | P | P | P | P | P | P | P | P | P |
 | `interop-with-accept-charset` | P | P | P | P | P | P | P | P | P |
 | `interop-with-accept-language` | P | P | P | P | P | P | P | P | P |
@@ -179,6 +189,8 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `rfc9112-5.1-01` | P | P | P | P | P | P | P | P | **F** |
 | `rfc9112-5.1-02-tab-before-colon` | P | P | P | P | P | P | P | P | **F** |
 | `rfc9112-5.2-01` | P | P | P | P | P | P | P | P | P |
+| `rfc9112-6.1-03-te-before-cl` | P | P | P | P | P | P | P | P | P |
+| `rfc9112-6.1-04-cl-before-te` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-6.2-01` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-6.3-04` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-6.3-09` | P | P | P | P | P | P | P | P | P |
@@ -202,6 +214,7 @@ Already split across the reference 8 — each is its own dialect decision.
 | `interop-method-with-digits` | P | P | **F** | **F** | **F** | P | P | **F** | P |
 | `interop-pipeline-post-then-get` | P | P | P | P | P | **F** | P | P | P |
 | `interop-port-too-large-in-host` | P | P | **F** | P | P | P | P | **F** | **F** |
+| `interop-post-head-pipeline` | P | P | P | P | P | **F** | P | P | P |
 | `interop-sec-websocket-upgrade` | **T** | P | **T** | **T** | P | P | P | **T** | **T** |
 | `interop-te-substring-match` | P | P | P | **F** | P | P | P | P | **F** |
 | `interop-uri-only-query` | P | **F** | P | P | P | P | P | P | **F** |
@@ -245,12 +258,12 @@ Already split across the reference 8 — each is its own dialect decision.
 
 | Server | Pass | Fail | Timeout | Skip |
 |---|---:|---:|---:|---:|
-| nginx | 212 | 10 | 1 | 0 |
-| apache | 218 | 5 | 0 | 0 |
-| caddy | 204 | 18 | 1 | 0 |
-| bandit | 195 | 21 | 7 | 0 |
-| cowboy | 209 | 14 | 0 | 0 |
-| lighttpd | 213 | 10 | 0 | 0 |
-| haproxy | 212 | 10 | 1 | 0 |
-| hyper | 200 | 21 | 1 | 1 |
-| stallion | 176 | 41 | 6 | 0 |
+| nginx | 225 | 10 | 1 | 0 |
+| apache | 231 | 5 | 0 | 0 |
+| caddy | 217 | 18 | 1 | 0 |
+| bandit | 208 | 21 | 7 | 0 |
+| cowboy | 222 | 14 | 0 | 0 |
+| lighttpd | 225 | 11 | 0 | 0 |
+| haproxy | 225 | 10 | 1 | 0 |
+| hyper | 213 | 21 | 1 | 1 |
+| stallion | 188 | 41 | 7 | 0 |
