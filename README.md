@@ -1,4 +1,4 @@
-# http11test scoreboard — 2026-05-22T122258Z
+# http11test scoreboard — 2026-05-27T172151Z
 
 9 servers × 277 tests.
 
@@ -217,7 +217,6 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `rfc9112-7.1.1-04-chunk-ext-value` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-7.1.2-01-chunk-trailer` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-9.1-01-http10-keep-alive` | P | P | P | P | P | P | P | P | P |
-| `rfc9112-9.3-01` | P | P | P | P | P | P | P | P | **F** |
 | `rfc9112-9.3-01-three` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-9.3-02-five-get-pipeline` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-9.3-03-head-then-get` | P | P | P | P | P | P | P | P | **F** |
@@ -290,6 +289,7 @@ Already split across the reference 8 — each is its own dialect decision.
 | `rfc9112-6.1-01-chunked-not-last` | P | P | P | **F** | P | P | P | P | **F** |
 | `rfc9112-6.1-02-http10-chunked` | P | **F** | **F** | **F** | **F** | P | P | P | **F** |
 | `rfc9112-6.1-07-te-substring-match` | P | P | P | **F** | P | P | P | P | **F** |
+| `rfc9112-9.3-01` | P | **F** | P | P | P | P | P | P | **F** |
 | `rfc9112-9.3-04-post-then-get` | P | P | P | P | P | **F** | P | P | P |
 | `rfc9112-9.3-05-post-head` | P | P | P | P | P | **F** | P | P | P |
 | `rfc9112-9.6-03-list` | P | P | P | **T** | P | P | P | P | **T** |
@@ -300,7 +300,7 @@ Already split across the reference 8 — each is its own dialect decision.
 | Server | Pass | Fail | Timeout | Skip |
 |---|---:|---:|---:|---:|
 | nginx | 264 | 12 | 1 | 0 |
-| apache | 272 | 5 | 0 | 0 |
+| apache | 271 | 6 | 0 | 0 |
 | caddy | 255 | 21 | 1 | 0 |
 | bandit | 241 | 28 | 8 | 0 |
 | cowboy | 261 | 16 | 0 | 0 |
