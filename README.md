@@ -1,4 +1,4 @@
-# http11test scoreboard — 2026-05-27T172151Z
+# http11test scoreboard — 2026-06-01T194402Z
 
 9 servers × 277 tests.
 
@@ -154,7 +154,7 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `rfc9110-8.3-01-form` | P | P | P | P | P | P | P | S | P |
 | `rfc9110-8.3-02-multiple-content-type` | P | P | P | P | P | P | P | P | P |
 | `rfc9110-8.3-03-binary-body` | P | P | P | P | P | P | P | P | P |
-| `rfc9110-8.6-03` | P | P | P | P | P | P | P | P | **F** |
+| `rfc9110-8.6-03` | P | P | P | P | P | P | P | P | P |
 | `rfc9110-8.6-04-negative-cl` | P | P | P | P | P | P | P | P | P |
 | `rfc9110-8.6-06-hex-cl` | P | P | P | P | P | P | P | P | P |
 | `rfc9110-8.6-07-body-longer-than-cl` | P | P | P | P | P | P | P | P | P |
@@ -170,10 +170,10 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `rfc9110-9.1-03-multi-char-method` | P | P | P | P | P | P | P | P | P |
 | `rfc9110-9.1-06-lowercase-method` | P | P | P | P | P | P | P | P | P |
 | `rfc9110-9.3.1-02-get-with-body` | P | P | P | P | P | P | P | P | P |
-| `rfc9110-9.3.2-01` | P | P | P | P | P | P | P | P | **F** |
-| `rfc9110-9.3.2-02-content-type` | P | P | P | P | P | P | P | P | **F** |
-| `rfc9110-9.3.2-02-server` | P | P | P | P | P | P | P | P | **F** |
-| `rfc9110-9.3.2-02-status` | P | P | P | P | P | P | P | P | **F** |
+| `rfc9110-9.3.2-01` | P | P | P | P | P | P | P | P | P |
+| `rfc9110-9.3.2-02-content-type` | P | P | P | P | P | P | P | P | P |
+| `rfc9110-9.3.2-02-server` | P | P | P | P | P | P | P | P | P |
+| `rfc9110-9.3.2-02-status` | P | P | P | P | P | P | P | P | P |
 | `rfc9110-9.3.2-06-head-with-cl` | P | P | P | P | P | P | P | P | P |
 | `rfc9110-9.3.2-07-head-with-body` | P | P | P | P | P | P | P | P | P |
 | `rfc9110-9.3.3-01-post-empty-body` | P | P | P | P | P | P | P | P | P |
@@ -219,7 +219,7 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `rfc9112-9.1-01-http10-keep-alive` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-9.3-01-three` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-9.3-02-five-get-pipeline` | P | P | P | P | P | P | P | P | P |
-| `rfc9112-9.3-03-head-then-get` | P | P | P | P | P | P | P | P | **F** |
+| `rfc9112-9.3-03-head-then-get` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-9.3-06-three-method-pipeline` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-9.3-07-empty-request` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-9.3-10-many-pipelined-gets` | P | P | P | P | P | P | P | P | P |
@@ -289,7 +289,7 @@ Already split across the reference 8 — each is its own dialect decision.
 | `rfc9112-6.1-01-chunked-not-last` | P | P | P | **F** | P | P | P | P | **F** |
 | `rfc9112-6.1-02-http10-chunked` | P | **F** | **F** | **F** | **F** | P | P | P | **F** |
 | `rfc9112-6.1-07-te-substring-match` | P | P | P | **F** | P | P | P | P | **F** |
-| `rfc9112-9.3-01` | P | **F** | P | P | P | P | P | P | **F** |
+| `rfc9112-9.3-01` | P | **F** | P | P | P | P | P | P | P |
 | `rfc9112-9.3-04-post-then-get` | P | P | P | P | P | **F** | P | P | P |
 | `rfc9112-9.3-05-post-head` | P | P | P | P | P | **F** | P | P | P |
 | `rfc9112-9.6-03-list` | P | P | P | **T** | P | P | P | P | **T** |
@@ -307,4 +307,4 @@ Already split across the reference 8 — each is its own dialect decision.
 | lighttpd | 264 | 13 | 0 | 0 |
 | haproxy | 263 | 13 | 1 | 0 |
 | hyper | 248 | 27 | 1 | 1 |
-| stallion | 225 | 44 | 8 | 0 |
+| stallion | 232 | 37 | 8 | 0 |
