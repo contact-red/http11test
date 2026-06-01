@@ -59,11 +59,18 @@ actor OkServer is stallion.HTTPServerActor
     request': stallion.Request val,
     responder: stallion.Responder)
   =>
+    // Per RFC 9110 §9.3.2 the application is responsible for not
+    // emitting a body when the request method is HEAD. The headers
+    // (including Content-Length) match what a GET would produce; only
+    // the body section is suppressed.
     let body: String val = "ok\n"
-    let response = stallion.ResponseBuilder(stallion.StatusOK)
+    let builder = stallion.ResponseBuilder(stallion.StatusOK)
       .add_header("Content-Type", "text/plain")
       .add_header("Content-Length", body.size().string())
       .finish_headers()
-      .add_chunk(body)
-      .build()
+    let response =
+      match request'.method
+      | stallion.HEAD => builder.build()
+      else builder.add_chunk(body).build()
+      end
     responder.respond(response)
