@@ -1,4 +1,4 @@
-# http11test scoreboard — 2026-06-01T194402Z
+# http11test scoreboard — 2026-08-13T034741Z
 
 9 servers × 277 tests.
 
@@ -115,6 +115,8 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `rfc9110-5.3-03-duplicate-extension` | P | P | P | P | P | P | P | P | P |
 | `rfc9110-5.3-05-many-distinct-headers` | P | P | P | P | P | P | P | P | P |
 | `rfc9110-5.5-01-compact` | P | P | P | P | P | P | P | P | P |
+| `rfc9110-5.5-01-nul-in-value` | P | P | P | P | P | P | P | P | P |
+| `rfc9110-5.5-02-bare-cr-in-value` | P | P | P | P | P | P | P | P | P |
 | `rfc9110-5.5-04-obs-text` | P | P | P | P | P | P | P | P | P |
 | `rfc9110-5.5-05-empty-field-value` | P | P | P | P | P | P | P | P | P |
 | `rfc9110-5.5-06-all-ows-value` | P | P | P | P | P | P | P | P | P |
@@ -189,9 +191,9 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `rfc9111-5.5-01-warning-header` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-2-01-minimal-request` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-2.2-03` | P | P | P | P | P | P | P | P | P |
-| `rfc9112-2.2-04` | P | P | P | P | P | P | P | P | **F** |
+| `rfc9112-2.2-04` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-2.2-08-multiple-empty-lines` | P | P | P | P | P | P | P | P | P |
-| `rfc9112-2.2-11-bare-lf-request` | P | P | P | P | P | P | P | P | **T** |
+| `rfc9112-2.2-11-bare-lf-request` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-2.5-02-lowercase-http-name` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-2.5-03-http10-request` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-3-06-extra-ws-request-line` | P | P | P | P | P | P | P | P | P |
@@ -199,8 +201,8 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `rfc9112-3.2.2-06` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-4-04-reason-phrase-ascii` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-4-05-status-line-prefix` | P | P | P | P | P | P | P | P | P |
-| `rfc9112-5.1-01` | P | P | P | P | P | P | P | P | **F** |
-| `rfc9112-5.1-02-tab-before-colon` | P | P | P | P | P | P | P | P | **F** |
+| `rfc9112-5.1-01` | P | P | P | P | P | P | P | P | P |
+| `rfc9112-5.1-02-tab-before-colon` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-5.2-01` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-6.1-03-te-before-cl` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-6.1-04-cl-before-te` | P | P | P | P | P | P | P | P | P |
@@ -217,6 +219,7 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `rfc9112-7.1.1-04-chunk-ext-value` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-7.1.2-01-chunk-trailer` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-9.1-01-http10-keep-alive` | P | P | P | P | P | P | P | P | P |
+| `rfc9112-9.3-01` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-9.3-01-three` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-9.3-02-five-get-pipeline` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-9.3-03-head-then-get` | P | P | P | P | P | P | P | P | P |
@@ -224,6 +227,7 @@ Universal-PASS across the reference 8-server set. Stallion column shows where it
 | `rfc9112-9.3-07-empty-request` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-9.3-10-many-pipelined-gets` | P | P | P | P | P | P | P | P | P |
 | `rfc9112-9.3.2-02` | P | P | P | P | P | P | P | P | P |
+| `rfc9112-9.6-04` | P | P | P | P | P | P | P | P | **F** |
 | `rfc9112-9.6-05` | P | P | P | P | P | P | P | P | P |
 | `rfc9218-2-01-priority-header` | P | P | P | P | P | P | P | P | P |
 | `save-data-1-01-save-data-on` | P | P | P | P | P | P | P | P | P |
@@ -235,25 +239,23 @@ Already split across the reference 8 — each is its own dialect decision.
 
 | Test ID | nginx | apache | caddy | bandit | cowboy | lighttpd | haproxy | hyper | **stallion** |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| `rfc3986-3.2.2-01-ipv6-no-brackets` | P | P | **F** | P | P | P | P | **F** | **F** |
-| `rfc3986-3.2.2-14-non-numeric-port` | P | P | **F** | P | P | P | P | **F** | **F** |
-| `rfc3986-3.2.2-16-port-too-large` | P | P | **F** | P | P | P | P | **F** | **F** |
-| `rfc3986-3.2.2-19-internal-space` | P | P | P | **F** | P | P | P | **F** | **F** |
-| `rfc3986-3.2.2-22-question-mark-in-host` | P | P | P | **F** | P | P | P | **F** | **F** |
+| `rfc3986-3.2.2-01-ipv6-no-brackets` | P | P | **F** | P | P | P | P | **F** | P |
+| `rfc3986-3.2.2-14-non-numeric-port` | P | P | **F** | P | P | P | P | **F** | P |
+| `rfc3986-3.2.2-16-port-too-large` | P | P | **F** | P | P | P | P | **F** | P |
+| `rfc3986-3.2.2-19-internal-space` | P | P | P | **F** | P | P | P | **F** | P |
+| `rfc3986-3.2.2-22-question-mark-in-host` | P | P | P | **F** | P | P | P | **F** | P |
 | `rfc6455-1.3-01-websocket-handshake` | **T** | P | **T** | **T** | P | P | P | **T** | **T** |
 | `rfc9110-10.2.4-01-origin-server-header` | P | P | P | **F** | P | P | P | **F** | **F** |
 | `rfc9110-5.3-04-many-headers` | P | P | P | **F** | P | P | P | P | P |
 | `rfc9110-5.4-01` | P | P | **F** | P | P | P | P | **F** | P |
-| `rfc9110-5.5-01-nul-in-value` | P | P | P | **F** | **F** | P | P | P | **F** |
-| `rfc9110-5.5-02-bare-cr-in-value` | P | P | P | **F** | **F** | P | P | P | **F** |
 | `rfc9110-5.5-03-del-in-value` | **F** | P | P | **F** | **F** | P | **F** | P | **F** |
-| `rfc9110-5.6.1-01-comma-ows` | P | P | P | **T** | P | P | P | P | **T** |
-| `rfc9110-5.6.2-01-tchar-field-name` | **F** | P | P | P | **F** | P | P | P | **F** |
-| `rfc9110-5.6.2-02-high-bit-field-name` | **F** | P | P | P | **F** | P | P | P | **F** |
-| `rfc9110-7.6.1-01-conflicting-connection` | P | P | P | **T** | P | P | P | P | **T** |
-| `rfc9110-7.6.1-04-duplicate-close-token` | P | P | P | **T** | P | P | P | P | **T** |
-| `rfc9110-7.6.1-05-te-token` | P | P | P | **T** | P | P | P | P | **T** |
-| `rfc9110-7.6.1-06-upgrade-token` | P | P | P | **T** | P | P | P | P | **T** |
+| `rfc9110-5.6.1-01-comma-ows` | P | P | P | **T** | P | P | P | P | P |
+| `rfc9110-5.6.2-01-tchar-field-name` | **F** | P | P | P | **F** | P | P | P | P |
+| `rfc9110-5.6.2-02-high-bit-field-name` | **F** | P | P | P | **F** | P | P | P | P |
+| `rfc9110-7.6.1-01-conflicting-connection` | P | P | P | **T** | P | P | P | P | P |
+| `rfc9110-7.6.1-04-duplicate-close-token` | P | P | P | **T** | P | P | P | P | P |
+| `rfc9110-7.6.1-05-te-token` | P | P | P | **T** | P | P | P | P | P |
+| `rfc9110-7.6.1-06-upgrade-token` | P | P | P | **T** | P | P | P | P | P |
 | `rfc9110-8.3-01` | P | P | P | P | P | P | P | **F** | P |
 | `rfc9110-8.6-05-plus-cl` | P | P | P | P | **F** | P | P | P | P |
 | `rfc9110-9.1-01-method-case-sensitive` | P | P | **F** | **F** | **F** | P | P | **F** | P |
@@ -261,50 +263,48 @@ Already split across the reference 8 — each is its own dialect decision.
 | `rfc9110-9.1-07-very-long-method` | **F** | P | P | **F** | P | P | **F** | **F** | P |
 | `rfc9110-9.1-08-all-digit-method` | P | P | **F** | **F** | **F** | P | P | **F** | P |
 | `rfc9110-9.1-09-hyphen-in-method` | **F** | P | **F** | **F** | **F** | P | **F** | **F** | P |
-| `rfc9110-9.3.6-01-connect-origin` | P | P | **F** | **F** | P | P | P | **F** | **F** |
+| `rfc9110-9.3.6-01-connect-origin` | P | P | **F** | **F** | P | P | P | **F** | P |
 | `rfc9110-9.3.7-01` | **F** | P | **F** | **F** | **F** | P | **F** | **F** | **F** |
 | `rfc9110-9.3.7-02-options-path` | **F** | P | **F** | **F** | **F** | **F** | **F** | **F** | **F** |
 | `rfc9110-9.3.8-01` | **F** | P | **F** | **F** | **F** | **F** | **F** | **F** | **F** |
-| `rfc9112-2.2-07` | P | P | **F** | **F** | P | **F** | P | P | **F** |
+| `rfc9112-2.2-07` | P | P | **F** | P | P | **F** | P | P | **F** |
 | `rfc9112-2.2-09-double-empty-crlf` | P | P | P | P | P | P | P | **F** | P |
-| `rfc9112-2.2-10` | **F** | **F** | P | P | P | P | P | P | **F** |
+| `rfc9112-2.2-10` | **F** | **F** | P | P | P | P | P | P | P |
 | `rfc9112-2.5-01-http12` | **F** | **F** | **F** | P | P | P | **F** | P | P |
 | `rfc9112-2.5-04-http2-preface` | P | P | **F** | **T** | **F** | **F** | **T** | **F** | P |
 | `rfc9112-2.5-05-leading-zero-version` | P | P | P | **F** | P | P | P | P | P |
-| `rfc9112-3-02` | **F** | P | **F** | **F** | **F** | P | **F** | **F** | **F** |
+| `rfc9112-3-02` | **F** | P | **F** | **F** | **F** | P | **F** | **F** | P |
 | `rfc9112-3-03` | P | P | **F** | P | P | **F** | P | P | **F** |
 | `rfc9112-3-04-method-with-space` | P | P | P | P | P | **F** | P | P | P |
 | `rfc9112-3-05-tab-method-target` | P | P | P | **F** | P | **F** | **F** | P | P |
 | `rfc9112-3-07-empty-method` | P | P | P | P | P | **F** | P | P | P |
-| `rfc9112-3.2-06-duplicate` | P | P | P | **F** | P | **F** | **F** | **F** | **F** |
-| `rfc9112-3.2-06-missing` | P | P | P | P | P | P | P | **F** | **F** |
-| `rfc9112-3.2-07-duplicate-host-same` | P | P | P | **F** | P | **F** | **F** | **F** | **F** |
-| `rfc9112-3.2-08-no-host-paired` | P | P | P | P | P | P | P | **F** | **F** |
+| `rfc9112-3.2-06-duplicate` | P | P | P | P | P | **F** | **F** | **F** | P |
+| `rfc9112-3.2-06-missing` | P | P | P | P | P | P | P | **F** | P |
+| `rfc9112-3.2-07-duplicate-host-same` | P | P | P | P | P | **F** | **F** | **F** | P |
+| `rfc9112-3.2-08-no-host-paired` | P | P | P | P | P | P | P | **F** | P |
 | `rfc9112-3.2.1-01-no-leading-slash` | P | **F** | P | P | P | P | P | P | **F** |
-| `rfc9112-3.2.2-01-host-userinfo` | P | P | P | P | P | P | P | **F** | **F** |
-| `rfc9112-3.2.3-01-userinfo-in-target` | P | P | **F** | **F** | P | P | P | **F** | **F** |
+| `rfc9112-3.2.2-01-host-userinfo` | P | P | P | P | P | P | P | **F** | P |
+| `rfc9112-3.2.3-01-userinfo-in-target` | P | P | **F** | **F** | P | P | P | **F** | P |
 | `rfc9112-3.2.4-01-get-star` | P | P | **F** | P | P | P | P | **F** | **F** |
 | `rfc9112-3.2.4-02` | **F** | P | P | P | P | P | **F** | P | P |
-| `rfc9112-5.2-02` | P | **F** | **F** | **F** | P | **F** | **F** | P | P |
-| `rfc9112-6.1-01-chunked-not-last` | P | P | P | **F** | P | P | P | P | **F** |
-| `rfc9112-6.1-02-http10-chunked` | P | **F** | **F** | **F** | **F** | P | P | P | **F** |
-| `rfc9112-6.1-07-te-substring-match` | P | P | P | **F** | P | P | P | P | **F** |
-| `rfc9112-9.3-01` | P | **F** | P | P | P | P | P | P | P |
+| `rfc9112-5.2-02` | P | **F** | **F** | P | P | **F** | **F** | P | P |
+| `rfc9112-6.1-01-chunked-not-last` | P | P | P | **F** | P | P | P | P | P |
+| `rfc9112-6.1-02-http10-chunked` | P | **F** | **F** | P | **F** | P | P | P | **F** |
+| `rfc9112-6.1-07-te-substring-match` | P | P | P | **F** | P | P | P | P | P |
 | `rfc9112-9.3-04-post-then-get` | P | P | P | P | P | **F** | P | P | P |
 | `rfc9112-9.3-05-post-head` | P | P | P | P | P | **F** | P | P | P |
-| `rfc9112-9.6-03-list` | P | P | P | **T** | P | P | P | P | **T** |
-| `rfc9112-9.6-04` | P | P | P | **F** | P | P | P | P | **F** |
+| `rfc9112-9.6-03-list` | P | P | P | **T** | P | P | P | P | P |
 
 ## Scores
 
 | Server | Pass | Fail | Timeout | Skip |
 |---|---:|---:|---:|---:|
 | nginx | 264 | 12 | 1 | 0 |
-| apache | 271 | 6 | 0 | 0 |
+| apache | 272 | 5 | 0 | 0 |
 | caddy | 255 | 21 | 1 | 0 |
-| bandit | 241 | 28 | 8 | 0 |
-| cowboy | 261 | 16 | 0 | 0 |
+| bandit | 249 | 20 | 8 | 0 |
+| cowboy | 263 | 14 | 0 | 0 |
 | lighttpd | 264 | 13 | 0 | 0 |
 | haproxy | 263 | 13 | 1 | 0 |
 | hyper | 248 | 27 | 1 | 1 |
-| stallion | 232 | 37 | 8 | 0 |
+| stallion | 262 | 14 | 1 | 0 |
